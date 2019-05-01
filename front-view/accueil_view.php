@@ -14,21 +14,7 @@
 		<header>
 
 			<!-- Menu -->
-			<nav>
-				<ul>
-					<li class="logo">
-						Jean Forteroche
-					</li>
-
-					<li class="menu">
-						Accueil
-					</li>
-					
-					<li class="login">
-						Log
-					</li>
-				</ul>
-			</nav>
+			<?php require('menu/menu_view.php'); ?>
 
 			<!-- Slider -->
 			<div class="slider">
