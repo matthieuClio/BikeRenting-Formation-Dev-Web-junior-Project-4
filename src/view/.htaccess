@@ -1,0 +1,9 @@
+<files accueil_view.php>
+Order allow,deny
+Deny from all
+</files>
+
+<files backoffice_connexion_view.php>
+Order allow,deny
+Deny from all
+</files>

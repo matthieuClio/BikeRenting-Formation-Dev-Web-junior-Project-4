@@ -1,0 +1,224 @@
+/* DESKTOP */
+/* ....... */
+/* ....... */
+
+
+
+/* Base */
+/* .... */
+/* .... */
+
+* {
+	margin: 0;
+	padding: 0;
+	color: #72777c;
+}
+
+body {
+	font-family: Tahoma;
+	font-size: 62.5%; /* Base 10px */
+}
+
+header {
+	font-size: 2em;
+}
+
+ul {
+	padding-top: 13px;
+	padding-bottom: 13px;
+	list-style-type: none;
+	background-color: #131418;
+}
+
+li {
+	color: white;
+	display: inline-block;
+}
+
+img {
+	padding: 0;
+	width: 100%;
+	vertical-align: middle;
+}
+
+
+/* Layout */
+/* ...... */
+/* ...... */
+
+
+/* ACCUEIL */
+
+/* Header */
+
+.logo {
+	width: 15%;
+	padding-right: 28%;
+	padding-left: 2%;
+}
+
+.menu {
+	width: 9%;
+	text-align: center;
+}
+
+.login {
+	width: 15%;
+	text-align: right;
+	padding-left: 28%;
+	padding-right: 2%;
+}
+
+.slider {
+	position: relative;
+	height: 100%;
+}
+
+.filter {
+	position: absolute;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background-color: rgb(40, 69, 44, 0.5);
+}
+
+/* Main */
+
+.banner {
+	padding-top: 15px;
+	padding-bottom: 15px;
+	text-align: center;
+	font-size: 2em;
+	color: #131418;
+	box-shadow: 0px 4px 5px #d4d4d4;
+}
+
+
+/* LOG BACKOFFICE */
+
+.background_body {
+	background-color: #f1f1f1;
+}
+
+.connexion_section {
+	margin: auto;
+	margin-top: 5%;
+	width: 350px;
+	height: 100%;
+	font-size: 2em;
+}
+
+.image_connexion_bo {
+	margin-bottom: 35px;
+}
+
+.connexion_form {
+	padding-top: 35px;
+	padding-bottom: 50px;
+	font-size: 0.7em;
+	background-color: white;
+	box-shadow: 0 1px 3px rgba(0,0,0,.13);
+}
+
+.connexion_p {
+	margin-left: 24px;
+	margin-bottom: 3px;
+	width: 85%;
+	text-align: left;
+	color: #72777c;
+}
+
+.input_connexion_bo {
+	margin-left: 24px;
+	margin-bottom: 20px;
+	width: 85%;
+	font-size: 2em;
+	background-color: #fbfbfb;
+	border: none;
+	border: 1px solid #dddddd;
+	box-shadow: 0px 2px 5px #d4d4d4;
+}
+
+.container_checkbox {
+	margin-top: 20px;
+	margin-left: 24px;
+	width: 85%;
+}
+
+.input_checkbox_bo {
+    height: 16px;
+    width: 16px;
+    cursor: pointer;
+}
+
+.checkbox_p {
+	display: inline;
+	color: #72777c;
+}
+
+.input_submit_bo {
+	margin-left: 50px;
+	padding: 6px;
+	padding-left: 10px;
+	padding-right: 10px;
+    background: #008ec2;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* BACKOFFICE */
+
+.header_backoffice {
+	position: fixed;
+	width: 100%;
+	height: 100px;
+	background-color: #131418;
+}
+
+.container_img_backoffice {
+	margin: auto;
+	max-width: 145px;
+}
+
+.menu_backoffice {
+	position: fixed;
+	margin-top: 100px;
+	width: 200px;
+	height: 837px;
+	background-color: orange;
+}
+
+.extension_backoffice {
+	padding-left: 10px;
+	border: 1px solid red;
+}
+
+.contain_backoffice {
+	margin-left: 200px;
+	padding-top: 110px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	height: 1000px;
+}
+
+
+
+/* Module (small content) */
+/* ...................... */
+/* ...................... */
+
+
+/* State (state elements) */
+/* ...................... */
+/* ...................... */
+
+.input_submit_bo:hover {
+	background-color: #009fd9;
+}
+
+
+/* Factored */
+/* .................... */
+/* .................... */
