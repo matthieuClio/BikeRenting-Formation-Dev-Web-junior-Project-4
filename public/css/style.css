@@ -11,23 +11,15 @@
 * {
 	margin: 0;
 	padding: 0;
-	color: #72777c;
 }
 
 body {
-	font-family: Tahoma;
+	font-family: Verdana;
 	font-size: 62.5%; /* Base 10px */
 }
 
 header {
 	font-size: 2em;
-}
-
-ul {
-	padding-top: 13px;
-	padding-bottom: 13px;
-	list-style-type: none;
-	background-color: #131418;
 }
 
 li {
@@ -50,6 +42,13 @@ img {
 /* ACCUEIL */
 
 /* Header */
+
+.contain_menu_front {
+	padding-top: 13px;
+	padding-bottom: 13px;
+	list-style-type: none;
+	background-color: #131418;
+}
 
 .logo {
 	width: 15%;
@@ -157,24 +156,18 @@ img {
 }
 
 .input_submit_bo {
-	margin-left: 50px;
-	padding: 6px;
-	padding-left: 10px;
-	padding-right: 10px;
-    background: #008ec2;
-    color: #fff;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
+	margin-left: 19px;
 }
+
 
 /* BACKOFFICE */
 
 .header_backoffice {
+	z-index: 1;
 	position: fixed;
 	width: 100%;
 	height: 100px;
-	background-color: #131418;
+	background-color: #23282d;
 }
 
 .container_img_backoffice {
@@ -190,9 +183,29 @@ img {
 	background-color: orange;
 }
 
-.extension_backoffice {
-	padding-left: 10px;
-	border: 1px solid red;
+.contain_menu_backoffice {
+	border: 3px solid red;
+}
+
+.tab_backoffice {
+	padding-left: 10%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	width: 90%;
+	font-size: 1.5em;
+	background-color: #23282d;
+	color: white;
+	cursor: pointer;
+	border: 1px solid pink;
+}
+
+.logo_tab_backoffice {
+	width: 25px;
+	display: inline;
+}
+
+.text_tab_backoffice {
+	display: inline;
 }
 
 .contain_backoffice {
@@ -201,8 +214,31 @@ img {
 	padding-bottom: 10px;
 	padding-left: 10px;
 	height: 1000px;
+	font-size: 2em;
 }
 
+#information_popup_backoffice {
+	margin-bottom: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: center;
+	border-radius: 5px;
+	background-color: purple;
+	color: pink;
+}
+
+.contain_ticket_backoffice {
+	border: 2px solid green;
+	text-align: center;
+}
+
+.title_ticket_backoffice {
+	color: #23282d;
+}
+
+.ticket_button_backoffice {
+	margin-top: 20px;
+}
 
 
 /* Module (small content) */
@@ -210,15 +246,35 @@ img {
 /* ...................... */
 
 
+
 /* State (state elements) */
 /* ...................... */
 /* ...................... */
 
+/* LOG BACKOFFICE */
 .input_submit_bo:hover {
 	background-color: #009fd9;
+}
+
+/* BACKOFFICE */
+
+.tab_backoffice:hover {
+	background-color: #191e23;
+	color: #00b9eb;
 }
 
 
 /* Factored */
 /* .................... */
 /* .................... */
+
+.button_style_blue {
+	padding: 6px;
+	padding-left: 10px;
+	padding-right: 10px;
+    background: #008ec2;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}

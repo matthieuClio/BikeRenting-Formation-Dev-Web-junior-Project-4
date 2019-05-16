@@ -31,7 +31,7 @@
 							Se souvenir de moi
 						</p>
 
-						<input type="submit" name="submit_connexion" value="Se connecter" class="input_submit_bo">
+						<input type="submit" name="submit_connexion" value="Se connecter" class="input_submit_bo button_style_blue">
 					</div>
 				</form>
 			</section>

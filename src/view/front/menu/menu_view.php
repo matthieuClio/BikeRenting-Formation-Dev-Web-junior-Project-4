@@ -1,6 +1,6 @@
 <!-- Menu -->
 <nav>
-	<ul>
+	<ul class="contain_menu_front">
 		<li class="logo">
 			Jean Forteroche
 		</li>

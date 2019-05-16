@@ -12,19 +12,33 @@
 		</header>
 
 		<nav class="menu_backoffice">
-			<ul class="extension_backoffice">
-				<li>
-					<p>Test</p>
+			<ul class="contain_menu_backoffice">
+				<li class="tab_backoffice">
+					<img src="../../public/images/icone/plume.png" alt="livre ouvert" class="logo_tab_backoffice">
+					<p class="text_tab_backoffice">Billets</p>
 				</li>
 				
-				<li>
-					<p>Test</p>
+				<li class="tab_backoffice">
+					<img src="../../public/images/icone/plume.png" alt="livre ouvert" class="logo_tab_backoffice">
+					<p class="text_tab_backoffice">Test</p>
 				</li>
 			</ul>
 		</nav>
 
 		<main class="contain_backoffice">
-			<p>Test2</p>
+			<section id="information_popup_backoffice">
+				<h2>Information popup</h2>
+			</section>
+
+			<h2>Ajouter un billet</h2>
+
+			<section class="contain_ticket_backoffice">
+				<h2 class="title_ticket_backoffice">Ecrivez un billet</h2>
+				<textarea>Next, use our Get Started docs to setup Tiny!</textarea>
+				<input type="submit" class="ticket_button_backoffice button_style_blue" value="Enregistrer">
+			</section>
+
+			<h2>Liste des billets</h2>
 		</main>
 
 		<footer>
