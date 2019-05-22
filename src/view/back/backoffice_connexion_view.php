@@ -7,9 +7,9 @@
 	<body class="background_body">
 		<main>
 			<section class="connexion_section">
-				<img src="../../public/images/photo/magi-book.png" alt="livre ouvert" class="image_connexion_bo">
+				<img src="public/images/photo/magi-book.png" alt="livre ouvert" class="image_connexion_bo">
 				
-				<form method="post" action="backoffice.php" class="connexion_form">
+				<form method="post" action="backoffice" class="connexion_form">
 					<p class="connexion_p">
 						Identifiant ou adresse e-mail
 					</p>

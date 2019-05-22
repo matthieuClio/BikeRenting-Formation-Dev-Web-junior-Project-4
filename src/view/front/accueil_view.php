@@ -12,7 +12,7 @@
 
 			<!-- Slider -->
 			<div class="slider">
-				<img src="../../public/images/slider/fond.jpg" alt="Image de couverture">
+				<img src="public/images/slider/fond.jpg" alt="Image de couverture">
 				<span class="filter"></span>
 			</div>
 		</header>
