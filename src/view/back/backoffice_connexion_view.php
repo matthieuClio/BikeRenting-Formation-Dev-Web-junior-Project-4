@@ -30,11 +30,15 @@
 						<p class="checkbox_p">
 							Se souvenir de moi
 						</p>
-
 						<input type="submit" name="submit_connexion" value="Se connecter" class="input_submit_bo button_style_blue">
 					</div>
 				</form>
+
+				<div class="error_bo">
+					<h3><?php if(!empty($_SESSION['error'])){ echo $_SESSION['error'];} ?></h3>
+				</div>
 			</section>
 		</main>
 	</body>
+
 </html>

@@ -159,6 +159,12 @@ img {
 	margin-left: 19px;
 }
 
+.error_bo {
+	margin-top: 10px;
+	text-align: center;
+	color: #d50a0a;
+}
+
 
 /* BACKOFFICE */
 
