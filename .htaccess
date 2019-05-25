@@ -52,6 +52,10 @@ Order allow,deny
 Deny from all
 </files>
 
+<files backoffice_connexion.php>
+Order allow,deny
+Deny from all
+</files>
 
 #Deny model
 

@@ -180,7 +180,7 @@ img {
 	margin-top: 100px;
 	width: 200px;
 	height: 837px;
-	background-color: orange;
+	background-color: grey;
 }
 
 .contain_menu_backoffice {
@@ -227,17 +227,34 @@ img {
 	color: pink;
 }
 
+.category_backoffice {
+	display: inline-block;
+	margin-top: 20px;
+	padding: 5px;
+	cursor: pointer;
+	background-color: #23282d;
+	color: white;
+	border-radius: 5px;
+}
+
 .contain_ticket_backoffice {
 	border: 2px solid green;
+	background-color: #dcdcdc;
 	text-align: center;
 }
 
 .title_ticket_backoffice {
+	margin-bottom: 25px;
 	color: #23282d;
+}
+
+.name_ticket_backoffice {
+	margin-bottom: 10px;
 }
 
 .ticket_button_backoffice {
 	margin-top: 20px;
+	margin-bottom: 20px;
 }
 
 
@@ -252,7 +269,7 @@ img {
 /* ...................... */
 
 /* LOG BACKOFFICE */
-.input_submit_bo:hover {
+.button_style_blue:hover {
 	background-color: #009fd9;
 }
 
@@ -260,6 +277,11 @@ img {
 
 .tab_backoffice:hover {
 	background-color: #191e23;
+	color: #00b9eb;
+}
+
+.category_backoffice:hover {
+	background-color: #1a1e22;
 	color: #00b9eb;
 }
 

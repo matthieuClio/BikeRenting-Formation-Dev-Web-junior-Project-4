@@ -3,14 +3,14 @@
 
 		public function UltimeSelect($colonne, $table, $condition, $donne_post, $limit, $connexion) {
 			
-		// initializes
+		// Initializes
 			$compteur= 0;
 			$nb_element= count($colonne);
 			$colonne_final= '';
 			$condition_final= '';
 			$condition_where= ' WHERE ';
 
-		// Sets whether to set a display limit or not (LIMIT ou pas)
+		// Sets whether to set a display limit or not (LIMIT or not)
 			if($limit != "") {
 				$reqLimit= ' LIMIT '.$limit;
 			}
@@ -30,11 +30,11 @@
 				}
 			}
 
-		// reset
+		// Reset
 			$compteur= 0;
 			$nb_element= count($condition);
 			$complementReqAnd= " AND ";
-			$ajout= 0;	// Variable qui indiquera l'ajout d'un champ
+			$ajout= 0;	// Variable that will indicate the addition of a field
 			$complementReq= $condition;
 			$complementExe= array();
 			$complementReqPost= $donne_post;
@@ -42,7 +42,7 @@
 		// Defines the conditions of the request
 			if($nb_element >= 1 && count($donne_post) >= 1 ) {
 				while($compteur != $nb_element) {
-					// Stock $_POST dans une variable
+					// Stock $ _POST in a variable
 					$input= $donne_post[$compteur];
 
 					if(!empty($input)){
@@ -62,7 +62,6 @@
 			}
 
 		//	Final request
-			//echo 'Champ: '.$colonne_final.' /Table:'.$table.$condition_final.' '.$reqLimit;
 			$requete= $connexion->prepare('SELECT '.$colonne_final.' FROM '.$table.$condition_final.$reqLimit);
 			$donne= array($requete, $complementExe);
 			return $donne;
@@ -111,10 +110,10 @@
 					$condition_final= $condition_where.')';
 				}
 
-			// réinitialisation
+			// Reset
 				$compteur= 0;
 				$ajout= 0;
-			// définit le nom des colonnes de la requete
+			// Defines the name of the columns of the query
 				while($compteur <= $nb_element_colonne -1 ) {
 					if($colonne[$compteur] != '' && $ajout == 0) {
 						$colonne_final= $colonne_final.$colonne[$compteur];
@@ -129,12 +128,12 @@
 						$compteur++;
 					}				
 				}
-			//	requete final
+			// Final request
 				$requete= $connexion->prepare('INSERT INTO '.$table.'('.$colonne_final.')'.$condition_final);
 				$donne= array($requete, $complementExe);
 
 				return $donne;
-		}//	fin function
+		}//	End function
 
 	}// End class Data_Base
 

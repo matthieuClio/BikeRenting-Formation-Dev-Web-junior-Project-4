@@ -30,15 +30,17 @@
 				<h2>Information popup</h2>
 			</section>
 
-			<h2>Ajouter un billet</h2>
+			<h2 class="category_backoffice">Ajouter un billet</h2>
 
-			<section class="contain_ticket_backoffice">
+			<form method="post" action="backoffice" class="contain_ticket_backoffice">
 				<h2 class="title_ticket_backoffice">Ecrivez un billet</h2>
-				<textarea>Next, use our Get Started docs to setup Tiny!</textarea>
-				<input type="submit" class="ticket_button_backoffice button_style_blue" value="Enregistrer">
-			</section>
 
-			<h2>Liste des billets</h2>
+				<input type="text" name="name_ticket" class="name_ticket_backoffice" placeholder="Nom du billet" required>
+				<textarea name="test_textarea"></textarea>
+				<input type="submit" name="submit_connexion" class="ticket_button_backoffice button_style_blue" value="Enregistrer">
+			</form>
+
+			<h2 class="category_backoffice">Liste des billets</h2>
 		</main>
 
 		<footer>
