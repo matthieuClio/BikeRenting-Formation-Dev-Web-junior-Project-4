@@ -11,19 +11,7 @@
 			</figure>
 		</header>
 
-		<nav class="menu_backoffice">
-			<ul class="contain_menu_backoffice">
-				<li class="tab_backoffice">
-					<img src="public/images/icone/plume.png" alt="Icone plume" class="logo_tab_backoffice">
-					<p class="text_tab_backoffice">Billets</p>
-				</li>
-				
-				<li class="tab_backoffice">
-					<img src="public/images/icone/plume.png" alt="Icone plume" class="logo_tab_backoffice">
-					<p class="text_tab_backoffice">Test</p>
-				</li>
-			</ul>
-		</nav>
+		<?php require('menu/menu_backoffice_view.php'); ?>
 
 		<main class="contain_backoffice">
 			<section id="information_popup_backoffice">

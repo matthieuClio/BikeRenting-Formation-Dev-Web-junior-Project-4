@@ -1,7 +1,7 @@
 <?php
 	// Load the view
 	require('../src/view/back/backoffice_billet_view.php');
-
+	
 	/*
 	// argument à insérer		
 	$colonne= array('pseudo', 'nom_article', 'commentaire', 'date_commentaire');	// nom des champs de la table ex: SELECT $colonne
