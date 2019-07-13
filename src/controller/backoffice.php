@@ -9,7 +9,6 @@
 	// Data base connexion
 	$connexion = $bdd->Start();
 
-
 	// The user is already logged in
 	if(!empty($_SESSION['pseudo_user']))
 	{
