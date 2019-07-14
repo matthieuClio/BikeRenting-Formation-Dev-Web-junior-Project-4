@@ -1,19 +1,22 @@
 <?php
-	require('../core/Bdd_connexion.php');
+	require('../core/bdd_connexion.php');
 	require('../src/model/Billets.php');
 
 	class BackofficeBillet {
 
-		public $bdd;
-		public $ticket_obj;
+		public $bddObj;
+		public $ticketObj;
+		public $connexion;
 
 		public $nameTicketPost;
 		public $textTicketPost;
 
 		// Constructor
 		function __construct() {
-		 	$this->bdd = new Bdd_connexion();
-		 	$this->ticket_obj = new Ticket();
+			// Object
+		 	$this->bddObj = new bdd_connexion();
+		 	$this->ticketObj = new Ticket();
+		 	$this->connexion = $this->bddObj->Start();
 
 		 	if(!empty($_POST['submit_connexion'])) {
 		 		$this->nameTicketPost = $_POST['name_ticket'];
@@ -24,34 +27,33 @@
 		function addTicket() {
 			if(!empty($_POST['submit_connexion'])) {
 
-				$bdd = new Bdd_connexion();
-				$ticket_obj = new Ticket();
-
 				$this->nameTicketPost = $_POST['name_ticket'];
 				$this->textTicketPost = $_POST['text_textarea'];
 
-				// Data base connexion
-				$connexion = $this->bdd->Start();
-
 				// Check name
-				$nameTicket = $this->ticket_obj->CheckNameTicket($this->nameTicketPost ,$connexion);
+				$nameTicket = $this->ticketObj->checkNameTicket($this->nameTicketPost, $this->connexion);
 
 				if(empty($nameTicket) && !empty($this->textTicketPost)) {
-					?> <!--<script type="text/javascript"> console.log('ticket ok') </script>--> <?php
-					//$ticket_obj->InsertTicket($nameTicketPost, $textTicketPost, $connexion);
+					// Message registration
+					$_SESSION['popup'] = 'Billet enregistré';
+
+					// Save the ticket on database
+					$this->ticketObj->insertTicket($this->nameTicketPost, $this->textTicketPost, $this->connexion);
 				}
 				else if(!empty($nameTicket)) {
-					?> <!--<script type="text/javascript"> console.log('Nom déjà pris') </script> --><?php
+					$_SESSION['popup'] = 'Nom du billet déjà pris';
 				}
 				else if(empty($this->textTicketPost)) {
-					?><!-- <script type="text/javascript"> console.log('textTicketPost vide') </script>--> <?php
+					$_SESSION['popup'] = 'Le text du billet est vide';
 				}
 			}
-
 		} // End function addTicket
 
-		function displayTicket() {
-			?><!-- <script type="text/javascript">console.log('ok');</script>--> <?php
+		function displayTicketView() {
+			// Function DisplayTicket of Ticket object
+			$request = $this->ticketObj->displayTicket($this->connexion);
+
+			return $request;
 		}
 
 	} // End class BackofficeBillet
@@ -60,21 +62,7 @@
 	// Object BackofficeBillet
 	$objectBackofficeBillet = new BackofficeBillet();
 	$objectBackofficeBillet->addTicket();
-	$objectBackofficeBillet->displayTicket();
+	$request = $objectBackofficeBillet->displayTicketView();
 	// Load the view
 	require('../src/view/back/backoffice_billet_view.php');
-
-
-	/*
-	// argument à insérer		
-	$colonne= array('pseudo', 'nom_article', 'commentaire', 'date_commentaire');	// nom des champs de la table ex: SELECT $colonne
-	$table= 'commentaire';
-	$condition= array('?', '?', '?', '?');	// condition ex: WHERE ... = $condition
-	$donne_post= array($_SESSION['identifiant_user'], $_POST['nom_article'], $_POST['commentaire'], $date);
-
-	// appel de la fonction
-	$test= $objet_bdd->UltimeInsert($colonne, $table, $condition, $donne_post, $connexion);
-	$complementExe= $test[1]; // stock les conditions complété
-	$test[0]->execute($complementExe);
-	*/
 ?>

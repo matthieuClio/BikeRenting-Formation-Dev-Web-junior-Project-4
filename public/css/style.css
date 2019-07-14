@@ -233,13 +233,14 @@ a:hover {
 }
 
 #information_popup_backoffice {
+	display: none;
 	margin-bottom: 20px;
 	padding-top: 10px;
 	padding-bottom: 10px;
 	text-align: center;
 	border-radius: 5px;
-	background-color: purple;
-	color: pink;
+	background-color: #23282d;
+	color: #00b9eb;
 }
 
 .category_backoffice {
@@ -253,9 +254,10 @@ a:hover {
 }
 
 .contain_ticket_backoffice {
-	border: 2px solid green;
+	border: 4px solid green;
 	background-color: #dcdcdc;
 	text-align: center;
+	overflow: hidden;
 }
 
 .title_ticket_backoffice {
@@ -276,6 +278,7 @@ a:hover {
 	border: 2px solid red;
 	background-color: #dcdcdc;
 	text-align: center;
+	overflow: hidden;
 }
 
 .ticket_listing_backoffice h2 {
@@ -294,6 +297,30 @@ a:hover {
 .ticket_backoffice h3 {
 	margin-bottom: 20px;
 }
+
+
+/* BACKOFFICE VIEW FULL */
+
+.ticket_backoffcie_view {
+	text-align: center;
+	border: 5px solid black;
+}
+
+.ticket_backoffcie_view_title {
+	margin-bottom: 20px;
+}
+
+.ticket_backoffcie_view_text {
+	background-color: white;
+}
+
+
+/* BACKOFFICE VIEW FULL MODIFY */
+
+.modify_button_backoffice {
+	margin-top: 20px;
+}
+
 
 /* Module (small content) */
 /* ...................... */
@@ -323,10 +350,16 @@ a:hover {
 	color: #00b9eb;
 }
 
+.display_backoffice:hover {
+	background-color: #1a1e22;
+	color: #00b9eb;
+}
+
 .edit_backoffice:hover {
 	background-color: #1a1e22;
 	color: #00b9eb;
 }
+
 .delete_backoffice:hover {
 	background-color: #1a1e22;
 	color: #00b9eb;
@@ -341,6 +374,17 @@ a:hover {
 	padding-left: 10px;
 	padding-right: 10px;
     background: #008ec2;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.display_backoffice {
+	padding: 6px;
+	padding-left: 10px;
+	padding-right: 10px;
+    background-color: green;
     color: #fff;
     border: none;
     border-radius: 3px;
@@ -367,4 +411,8 @@ a:hover {
     border: none;
     border-radius: 3px;
     cursor: pointer;
+}
+
+.title_color_backoffice {
+	color: #00b9eb;
 }

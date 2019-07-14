@@ -14,7 +14,7 @@
 		
 		<li class="tab_backoffice">
 			<img src="public/images/icone/plume.png" alt="Icone plume" class="logo_tab_backoffice">
-			<p class="text_tab_backoffice">Test</p>
+			<p class="text_tab_backoffice">Commentaire</p>
 		</li>
 	</ul>
 </nav>
