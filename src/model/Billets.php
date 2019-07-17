@@ -14,11 +14,13 @@
 		// Insert a ticket
 		public function insertTicket($nom, $texte, $connexion)
 		{
-			$requete = $connexion->prepare('INSERT INTO billet(nom, texte) VALUES(?, ?)');
-			$requete->execute(array($nom, $texte));
+			$date_time = date("Y-m-d H:i:s");
+
+			$requete = $connexion->prepare('INSERT INTO billet(nom, texte, date_time) VALUES(?, ?, ?)');
+			$requete->execute(array($nom, $texte, $date_time));
 		}
 
-		// Display a ticket
+		// Display name of a ticket
 		public function displayTicket($connexion)
 		{
 			$requete = $connexion->prepare('SELECT nom FROM billet ORDER BY id ASC');
@@ -30,11 +32,12 @@
 		// Display a specific ticket
 		public function displaySpecificTicket($nom, $connexion)
 		{
-			$requete = $connexion->prepare('SELECT texte FROM billet WHERE nom = :nom');
+			$requete = $connexion->prepare('SELECT texte, date_time FROM billet WHERE nom = :nom');
 			$requete->execute(array('nom' => $nom));
 			$textTickets = $requete->fetch();
+			$infoTicket = array($textTickets['texte'], $textTickets['date_time']);
 
-			return $textTickets['texte'];
+			return $infoTicket;
 		}
 
 		// Get id of a ticket
@@ -55,12 +58,30 @@
 			$modifyTickets = $requete->fetch();
 		}
 
-		// Display a specific ticket
+		// Delete a specific ticket
 		public function deleteSpecificTicket($nom, $connexion)
 		{
 			$requete = $connexion->prepare('DELETE FROM billet WHERE nom = :nom');
 			$requete->execute(array('nom' => $nom));
 			$deleteTickets = $requete->fetch();
+		}
+
+		// Display all tickets
+		public function displayAllTicket($connexion)
+		{
+			$requete = $connexion->prepare('SELECT id, nom, texte, date_time FROM billet');
+			$requete->execute();
+
+			return $requete;
+		}
+
+		// Display all informations of a specific id
+		public function idDisplayInfoTicket($id, $connexion)
+		{
+			$requete = $connexion->prepare('SELECT id, nom, texte, date_time FROM billet WHERE id = :id');
+			$requete->execute(array('id' => $id));
+
+			return $requete;
 		}
 
 	} // End class Identification

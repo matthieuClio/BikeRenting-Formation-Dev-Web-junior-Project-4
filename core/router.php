@@ -12,6 +12,16 @@
 		require('../src/controller/accueil.php');
 	}
 
+	else if ($url[0] == 'ticket') 
+	{
+		require('../src/controller/displayTicket.php');
+	}
+
+	else if ($url[0] == 'chapitre') 
+	{
+		require('../src/controller/billet_front_full.php');
+	}
+
 	else if ($url[0] == 'backoffice' && !empty($url[1]) && $url[1] == 'billets' && !empty($url[2]) && $url[2] == 'manage' && !empty($_SESSION['pseudo_user'])) 
 	{
 		require('../src/controller/backoffice_billet_full.php');
@@ -32,7 +42,6 @@
 		require('../src/controller/backoffice_connexion.php');
 	}
 
-	
 
 	else 
 	{

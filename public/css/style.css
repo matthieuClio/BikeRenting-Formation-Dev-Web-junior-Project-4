@@ -57,24 +57,13 @@ a:hover {
 	padding-bottom: 13px;
 	list-style-type: none;
 	background-color: #131418;
-}
-
-.logo {
-	width: 15%;
-	padding-right: 28%;
-	padding-left: 2%;
-}
-
-.menu {
-	width: 9%;
 	text-align: center;
 }
 
-.login {
-	width: 15%;
-	text-align: right;
-	padding-left: 28%;
-	padding-right: 2%;
+.menu {
+	padding-right: 20px;
+	padding-left: 20px;
+	text-align: center;
 }
 
 .slider {
@@ -99,6 +88,52 @@ a:hover {
 	font-size: 2em;
 	color: #131418;
 	box-shadow: 0px 4px 5px #d4d4d4;
+}
+
+
+/* TICKET */
+
+.article_ticket_view {
+	margin: auto;
+	border: 2px solid red;
+	text-align: center;
+}
+
+.ticket_view {
+	display: inline-block;
+	margin-top: 50px;
+	width: 200px;
+	background-color: white;
+	border-radius: 5px;
+	box-shadow: 0px 4px 5px #d4d4d4;
+}
+
+.ticket_view figure {
+	height: 50%;
+	overflow: hidden;
+	border-radius: 5px;
+}
+
+.ticket_view h2 {
+	padding-top: 15px;
+	padding-bottom: 15px;
+	text-align: center;
+	font-size: 2em;
+	color: #131418;
+}
+
+.ticket_view p {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	text-align: center;
+	font-size: 1.5em;
+	color: #131418;
+}
+
+.ticket_view_button {
+	padding: 10px;
+	width: 100%;
+	font-size: 2em;
 }
 
 
@@ -333,10 +368,12 @@ a:hover {
 /* ...................... */
 
 /* LOG BACKOFFICE */
+
 .button_style_blue:hover {
 	background-color: #1a1e22;
 	color: #00b9eb;
 }
+
 
 /* BACKOFFICE */
 

@@ -1,16 +1,12 @@
 <!-- Menu -->
 <nav>
 	<ul class="contain_menu_front">
-		<li class="logo">
-			Jean Forteroche
+		<li class="menu">
+			<a href="">Accueil</a>
 		</li>
 
 		<li class="menu">
-			Accueil
-		</li>
-		
-		<li class="login">
-			Log
+			<a href="ticket">Ticket</a>
 		</li>
 	</ul>
 </nav>

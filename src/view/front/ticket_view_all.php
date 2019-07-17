@@ -18,8 +18,17 @@
 
 		<main>
 			<section>
-				<h1 class="banner">Liste des derniers chapitres publiés :</h1>
+				<h1 class="banner"> <?php echo $_POST['id']; ?> Liste des chapitres publiés :</h1>
 			</section>
+
+			<article>
+				<h1> Titre de du chapitre : </h1>
+
+				<section>
+					<h2> Date : </h2>
+				</section>
+			</article>
+
 		</main>
 
 	</body>
