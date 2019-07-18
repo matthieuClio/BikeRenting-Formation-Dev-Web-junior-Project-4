@@ -24,7 +24,7 @@
 
 					<section>
 						<h2 class="ticket_backoffcie_view_title"> Billet : </h2>
-							<textarea name="text_textareaModify"><?php echo $request; ?></textarea>
+							<textarea name="text_textareaModify"><?php echo $request[0]; ?></textarea>
 							<input type="submit" name="modify_backoffice_full" class="modify_button_backoffice edit_backoffice" value="Modifier">
 
 							<input type="hidden" name="edit_backoffice" value="modify">

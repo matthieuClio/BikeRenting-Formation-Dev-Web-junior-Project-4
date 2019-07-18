@@ -80,8 +80,9 @@
 		{
 			$requete = $connexion->prepare('SELECT id, nom, texte, date_time FROM billet WHERE id = :id');
 			$requete->execute(array('id' => $id));
+			$infoTicket = $requete->fetch();
 
-			return $requete;
+			return $infoTicket;
 		}
 
 	} // End class Identification

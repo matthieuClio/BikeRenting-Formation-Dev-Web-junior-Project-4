@@ -16,7 +16,8 @@
 		<main class="contain_backoffice">
 			<article class="ticket_backoffcie_view">
 				<section>
-					<h2 class="ticket_backoffcie_view_title"> Titre du billet : 
+					<h2 class="ticket_backoffcie_view_title">
+						Titre du billet : 
 						<span class="title_color_backoffice"> 
 							<?php if(!empty($_POST['ticket_view'])) {echo $_POST['ticket_view']; }?>
 						</span>
@@ -24,7 +25,12 @@
 				</section>
 
 				<section>
-					<h2 class="ticket_backoffcie_view_title"> Date du billet : <?php echo $request[1]; ?>:</h2>
+					<h2 class="ticket_backoffcie_view_title">
+						Date du billet : 
+						<span class="title_color_backoffice">
+							<?php echo $request[1]; ?>
+							<span class="title_color_backoffice">
+					</h2>
 				</section>
 
 				<section>

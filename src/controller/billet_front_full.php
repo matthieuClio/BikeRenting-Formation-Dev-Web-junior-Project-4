@@ -17,7 +17,9 @@
 		 	$this->ticketObj = new Ticket();
 		 	$this->connexion = $this->bddObj->Start();
 
-		 	$this->id = $_POST['id'];
+		 	if(!empty($_POST['id'])) {
+		 		$this->id = $_POST['id'];
+		 	}
 	    }
 
 	    function ticketInfo() {
@@ -31,8 +33,14 @@
 
 	// Object BackofficeBillet
 	$objectTicket = new DisplayTicket();
-	$requete = $objectTicket->ticketInfo();
 
-	// Load the view
-	require('../src/view/front/ticket_view_all.php');
+	if(!empty($_POST['id'])) {
+		$requete = $objectTicket->ticketInfo();
+		
+		// Load the view
+		require('../src/view/front/ticket_view_all.php');
+	}
+	else {
+		header('location:ticket');
+	}
 ?>

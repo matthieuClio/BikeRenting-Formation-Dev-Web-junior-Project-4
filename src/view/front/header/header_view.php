@@ -6,3 +6,8 @@
 <link rel="icon" type="image/jpg" href="public/images/icone/book.jpg">
 <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
 <link rel="stylesheet" href="public/css/style.css">
+<?php 
+if (!empty($_POST['id'])) { ?>
+	<script src="https://cloud.tinymce.com/5/tinymce.min.js"></script>
+	<script>tinymce.init({selector:'textarea'});</script> <?php
+} ?>
