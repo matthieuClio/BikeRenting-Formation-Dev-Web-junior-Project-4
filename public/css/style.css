@@ -75,6 +75,7 @@ a:hover {
 .filter {
 	position: absolute;
 	top: 0;
+	left: 0;
 	height: 100%;
 	width: 100%;
 	background-color: rgb(40, 69, 44, 0.5);
@@ -154,24 +155,23 @@ a:hover {
 
 .ticket_view_all_article {
 	text-align: center;
-	border: 2px solid red;
+}
+
+.ticket_view_all_article section {
+	margin: auto;
+	max-width: 1200px;
 }
 
 .ticket_view_all_text {
 	margin-top: 25px;
 	padding-top: 20px;
-	border-top: 5px solid black;
 }
 
 .ticket_view_all_com {
-	border-top: 5px solid black;
 	padding-top: 10px;
 	text-align: center;
 	font-size: 1.5em;
-}
-
-.commentary_section_view_all {
-	border: 4px solid orange;
+	border-top: 1px solid gray;
 }
 
 .commentary_section_view_all h3 {
@@ -180,12 +180,11 @@ a:hover {
 
 .commentary_section_view_all p {
 	margin-top: 25px;
-	background-color: pink;
 }
 
 .commentary_form_view_all {
 	padding-top: 25px;
-	border-top: 5px solid black;
+	border-top: 1px solid gray;
 }
 
 .commentary_form_view_all h3 {
@@ -197,10 +196,20 @@ a:hover {
 	max-width: 1200px;
 }
 
+.captcha_resizing {
+	margin-bottom: 10px;
+	max-width: 75px;
+}
+
 .commentary_form_view_all input {
 	margin: auto;
 	margin-bottom: 10px; 
 	display: block;
+}
+
+.error_messages {
+	font-weight: bold;
+	color: red;
 }
 
 
@@ -517,4 +526,8 @@ a:hover {
 
 .title_color_backoffice {
 	color: #00b9eb;
+}
+
+.input_text {
+	padding: 5px;
 }

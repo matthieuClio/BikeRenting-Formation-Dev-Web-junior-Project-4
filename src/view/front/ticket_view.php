@@ -35,7 +35,7 @@
 								<h2><?php echo $allTickets['nom']; ?></h2>
 								<p><?php  echo $allTickets['date_time'];?></p>
 
-								<input type="hidden" name="id" value="<?php  echo $allTickets['id'];?>">
+								<input type="hidden" name="id" value="<?php echo $allTickets['id'];?>">
 								<input type="submit" name="valider" class="ticket_view_button button_style_blue" value="Voir">
 							</form>
 						</section>

@@ -35,8 +35,8 @@
 				<div>
 					<section class="commentary_section_view_all">
 						<h3>Titre : Test</h3>
-						<form method="post" action="">
-							<input type="submit" class="button_style_blue" value="Signaler ce commentaire">
+						<form method="post" action="chapitre">
+							<input type="submit" name="report_button" class="button_style_blue" value="Signaler ce commentaire">
 						</form>
 						
 						<p>text_commentaire : TEST</p>
@@ -44,11 +44,24 @@
 
 					<section class="commentary_form_view_all">
 						<h3>Laisser un commentaire</h3>
+
+						<!-- Display message -->
+						<span class="error_messages"><?php if(!empty($captchaMessage)){echo $captchaMessage;}?> </span>
+						
 						<form method="post" action="">
-							Pseudo: <input type="text" name="pseudo" placeholder="Pseudo">
-							<textarea></textarea>
-							<p>Captcha</p>
-							<input type="submit" class="button_style_blue" value="Soumettre">
+							Pseudo : <input type="text" name="pseudo" class="input_text" placeholder="Pseudo" required>
+							<textarea name="text_comment"></textarea>
+
+							Code :
+							<figure>
+								<img src="core/capthcaPicture.php" class="captcha_resizing">
+							</figure>
+							
+							Entrer le code :
+							<input type="text" name="vercode" class="input_text" required placeholder="Code" onpaste="return false;" oncopy="return false;" id="code_input" maxlength="6"/>
+							
+							<input type="submit" name="validator_button" class="button_style_blue" value="Soumettre">
+							<input type="hidden" name="id" value="<?php if(!empty($_POST['id'])){ echo $_POST['id']; }?>">
 						</form>
 					</section>
 				</div>

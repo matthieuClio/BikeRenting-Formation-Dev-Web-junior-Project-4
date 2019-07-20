@@ -85,5 +85,5 @@
 			return $infoTicket;
 		}
 
-	} // End class Identification
+	} // End class Ticket
 ?>
