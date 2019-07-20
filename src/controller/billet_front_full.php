@@ -7,15 +7,16 @@
 	class DisplayTicket {
 
 		// Property
-		public $bddObj;
-		public $ticketObj;
-		public $commentObj;
-		public $connexion;
-		public $captcha;
-		public $code;
-		public $id;
-		public $pseudo;
-		public $text;
+		private $bddObj;
+		private $ticketObj;
+		private $commentObj;
+		private $connexion;
+		private $captcha;
+		private $code;
+		private $id;
+		private $idComment;
+		private $pseudo;
+		private $text;
 
 		// Constructor
 		function __construct() {
@@ -35,6 +36,9 @@
 		 	if(!empty($_POST['text_comment'])) {
 		 		$this->text = $_POST['text_comment'];
 		 	}
+		 	if (!empty($_POST['id_comment'])) {
+		 		$this->idComment = $_POST['id_comment'];
+		 	}
 		 	if (!empty($_POST['vercode'])) {
 		 		$this->code = $_POST['vercode'];
 		 	}
@@ -42,6 +46,12 @@
 
 	    function ticketInfo() {
 			$request = $this->ticketObj->idDisplayInfoTicket($this->id ,$this->connexion);
+
+			return $request;
+		}
+
+		function displayComment() {
+			$request = $this->commentObj->displayCommentMod($this->id, $this->connexion);
 
 			return $request;
 		}
@@ -55,16 +65,21 @@
 
 				if($captchaCheck) {
 					// Insert comment
-					$this->commentObj->insertcommentBdd($this->id, $this->pseudo, $this->text, $this->connexion);
+					$this->commentObj->insertCommentMod($this->id, $this->pseudo, $this->text, $this->connexion);
 				}
 				else {
 					$Message = "Code captcha invalide";
 					return $Message;
 				}
 			}
-
 		} // End function insertComment
 
+		function reportComment() {
+			if(!empty($_POST['report_button'])) {
+				$this->commentObj->reportCommentMod($this->idComment, $this->connexion);
+			}
+
+		} // End function reportComment
 	} // End class BackofficeBillet
 
 
@@ -73,16 +88,24 @@
 
 	// Display ticket if we got id ticket
 	if(!empty($_POST['id'])) {
-		$requete = $objectTicket->ticketInfo();
+
+		// Display ticket informations
+		$requeteTicket = $objectTicket->ticketInfo();
+
+		// Report comment
+		$objectTicket->reportComment();
 
 		// Get message if the capthca is wrong or success
 		$captchaMessage = $objectTicket->insertComment();
+
+		// Display comment
+		$requeteComment = $objectTicket->displayComment();
 
 		// Load the view
 		require('../src/view/front/ticket_view_all.php');
 	}
 	else {
-		// Redirection
+		// Location
 		header('location:ticket');
 	}
 ?>

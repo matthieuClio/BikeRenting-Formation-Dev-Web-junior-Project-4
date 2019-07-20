@@ -22,25 +22,35 @@
 			</section>
 
 			<article class="ticket_view_all_article">
-				<h1> Titre du chapitre : <span class="title_color_backoffice"><?php if(!empty($requete['nom'])){echo $requete['nom'];} ?></span> </h1>
-				<section>
-					<h2> Date : <span class="title_color_backoffice"><?php if(!empty($requete['date_time'])){echo $requete['date_time'];}?></span></h2>
+				<h1> Titre du chapitre : <span class="title_color_backoffice"><?php if(!empty($requeteTicket['nom'])){echo $requeteTicket['nom'];} ?></span> </h1>
+				<section class="text_align_max_width">
+					<h2> Date : <span class="title_color_backoffice"><?php if(!empty($requeteTicket['date_time'])){echo $requeteTicket['date_time'];}?></span></h2>
 
-					<p class="ticket_view_all_text"><?php if(!empty($requete['texte'])){echo $requete['texte'];}?></p>
+					<p class="ticket_view_all_text"><?php if(!empty($requeteTicket['texte'])){echo $requeteTicket['texte'];}?></p>
 				</section>
 			</article>
 
 			<section class="ticket_view_all_com">
-				<h2>Commentaire</h2>
+				<h2>Espace commentaire</h2>
 				<div>
-					<section class="commentary_section_view_all">
-						<h3>Titre : Test</h3>
-						<form method="post" action="chapitre">
-							<input type="submit" name="report_button" class="button_style_blue" value="Signaler ce commentaire">
-						</form>
-						
-						<p>text_commentaire : TEST</p>
-					</section>
+					<?php
+					while($dataComment = $requeteComment->fetch()) { ?>
+
+						<section class="commentary_section_view_all text_align_max_width">
+							<h3>Pseudo : <?php  echo $dataComment['pseudo'].' '.$dataComment['id']; ?></h3>
+							<form method="post" action="chapitre">
+								<input type="submit" name="report_button" class="button_style_blue" value="Signaler ce commentaire">
+
+								<!-- Id ticket of comment -->
+								<input type="hidden" name="id_comment" value="<?php echo $dataComment['id'];?>">
+								<!-- Id ticket -->
+								<input type="hidden" name="id" value="<?php if(!empty($_POST['id'])){ echo $_POST['id']; }?>">
+							</form>
+							
+							<p>Commentaire : <?php echo $dataComment['texte']; ?></p>
+						</section>
+						<?php
+					} ?>
 
 					<section class="commentary_form_view_all">
 						<h3>Laisser un commentaire</h3>
@@ -48,7 +58,7 @@
 						<!-- Display message -->
 						<span class="error_messages"><?php if(!empty($captchaMessage)){echo $captchaMessage;}?> </span>
 						
-						<form method="post" action="">
+						<form method="post" action="chapitre">
 							Pseudo : <input type="text" name="pseudo" class="input_text" placeholder="Pseudo" required>
 							<textarea name="text_comment"></textarea>
 

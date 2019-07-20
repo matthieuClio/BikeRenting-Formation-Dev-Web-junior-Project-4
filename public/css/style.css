@@ -157,21 +157,24 @@ a:hover {
 	text-align: center;
 }
 
-.ticket_view_all_article section {
-	margin: auto;
-	max-width: 1200px;
-}
-
 .ticket_view_all_text {
 	margin-top: 25px;
 	padding-top: 20px;
 }
 
 .ticket_view_all_com {
-	padding-top: 10px;
+	margin-top: 100px;
 	text-align: center;
 	font-size: 1.5em;
-	border-top: 1px solid gray;
+}
+
+.ticket_view_all_com section {
+	margin-top: 25px;
+}
+
+.commentary_section_view_all {
+	border-bottom: 1px solid gray;
+	margin-top: 25px;
 }
 
 .commentary_section_view_all h3 {
@@ -184,7 +187,6 @@ a:hover {
 
 .commentary_form_view_all {
 	padding-top: 25px;
-	border-top: 1px solid gray;
 }
 
 .commentary_form_view_all h3 {
@@ -530,4 +532,9 @@ a:hover {
 
 .input_text {
 	padding: 5px;
+}
+
+.text_align_max_width{
+	margin: auto;
+	max-width: 1200px;
 }
