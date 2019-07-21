@@ -2,14 +2,13 @@
 
 // Popup object
 // ...
-// ...
 let popupObject = new Popup();
 
 // Display the popup
 popupObject.displayPopupBackoffice();
 
+
 // Ticket object
-// ...
 // ...
 let ticketObject = new Ticket();
 

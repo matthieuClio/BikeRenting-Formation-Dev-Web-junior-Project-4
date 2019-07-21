@@ -433,6 +433,21 @@ a:hover {
 }
 
 
+/* BACKOFFICE COMMENT */
+
+.reported_comment {
+	margin-bottom: 25px;
+	padding-top: 25px;
+	padding-bottom: 25px;
+	text-align: center;
+	background-color: white;
+}
+
+.reported_comment p {
+	margin-bottom: 25px;
+}
+
+
 /* Module (small content) */
 /* ...................... */
 /* ...................... */
@@ -477,6 +492,7 @@ a:hover {
 	background-color: #1a1e22;
 	color: #00b9eb;
 }
+
 
 /* Factored */
 /* .................... */

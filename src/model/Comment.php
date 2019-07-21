@@ -17,13 +17,46 @@
 			return $requete;
 		}
 
+		// Display comment unreported
+		public function displayUnreportedCommentMod($connexion)
+		{
+			$requete = $connexion->prepare('SELECT * FROM commentaire WHERE signale = "" ');
+			$requete->execute();
+
+			return $requete;
+		}
+
+		// Display reported comment
+		public function displayReportedCommentMod($connexion)
+		{
+			$requete = $connexion->prepare('SELECT * FROM commentaire WHERE signale = "oui" ');
+			$requete->execute();
+
+			return $requete;
+		}
+
 		// Report comment
 		public function reportCommentMod($id_comment, $connexion)
 		{
-			//UPDATE users SET name=?, surname=?, sex=? WHERE id=?";
 			$requete = $connexion->prepare('UPDATE commentaire SET signale = "oui" WHERE id = ? AND signale != "oui" ');
 			$requete->execute(array($id_comment));
 		}
+
+		// Unreport comment
+		public function unreportCommentMod($id_comment, $connexion)
+		{
+			$requete = $connexion->prepare('UPDATE commentaire SET signale = "" WHERE id = ? ');
+			$requete->execute(array($id_comment));
+		}
+
+		// Delete comment
+		public function deleteCommentMod($id_comment, $connexion)
+		{
+			$requete = $connexion->prepare('DELETE FROM commentaire WHERE id = ?');
+			$requete->execute(array($id_comment));
+		}
+
+
 
 	} // End class Comment
 ?>
