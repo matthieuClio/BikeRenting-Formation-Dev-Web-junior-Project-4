@@ -18,8 +18,9 @@
 		</li>
 
 		<li class="tab_backoffice">
-			<img src="public/images/icone/plume.png" alt="Icone plume" class="logo_tab_backoffice">
-			<a href="backoffice/commentaire" class="text_tab_backoffice">Deconnexion</a>
+			<form method="post" action="backoffice">
+				<input type="submit" name="disconnection_back" class="button_style_blue" value="Deconnexion">
+			</form>
 		</li>
 	</ul>
 </nav>

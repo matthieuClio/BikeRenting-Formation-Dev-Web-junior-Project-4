@@ -25,7 +25,17 @@
 		 	}
 	    }
 
-	    function AlreadylogIn() {
+	    function disconnection() {
+	    	if(!empty($_SESSION['pseudo_user']) && !empty($_POST['disconnection_back'])) {
+
+	    		// End the session
+	    		$_SESSION = array();
+				session_unset();
+				session_destroy();
+	    	}
+	    }
+
+	    function alreadylogIn() {
 			if(!empty($_SESSION['pseudo_user'])) {
 				// Load the view
 				require('../src/view/back/backoffice_view.php');
@@ -70,6 +80,10 @@
 				}
 	    	} // End button checked
 
+	    	else {
+	    		require('../src/view/back/backoffice_connexion_view.php');
+	    	}
+
 	    } // End function
 	} // End class Backoffice
 
@@ -78,10 +92,10 @@
 	$objectBackoffice = new Backoffice();
 
 	// Disconnection
-	//$objectBackoffice->AlreadylogIn();
+	$objectBackoffice->disconnection();
 
 	// The user is already logged in
-	$objectBackoffice->AlreadylogIn();
+	$objectBackoffice->alreadylogIn();
 
 	// The user accesses the page from the form
 	$objectBackoffice->logInConnexion();
