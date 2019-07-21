@@ -16,5 +16,10 @@
 			<img src="public/images/icone/plume.png" alt="Icone plume" class="logo_tab_backoffice">
 			<a href="backoffice/commentaire" class="text_tab_backoffice">Commentaire</a>
 		</li>
+
+		<li class="tab_backoffice">
+			<img src="public/images/icone/plume.png" alt="Icone plume" class="logo_tab_backoffice">
+			<a href="backoffice/commentaire" class="text_tab_backoffice">Deconnexion</a>
+		</li>
 	</ul>
 </nav>
