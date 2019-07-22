@@ -17,6 +17,10 @@
 			<section id="information_popup_backoffice">
 				<h2>Information popup</h2>
 			</section>
+
+			<section>
+				<h1>Bienvenue !</h1>
+			</section>
 		</main>
 
 		<footer>

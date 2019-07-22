@@ -1,5 +1,6 @@
 <?php
 	require('../core/Bdd_connexion.php');
+	require('../core/Captcha.php');
 	require('../src/model/Identification.php');
 
 	class Backoffice {
@@ -9,12 +10,14 @@
 		private $connexion;
 		private $pseudo;
 		private $password;
+		private $captcha;
 
 		// Constructor
 		function __construct() {
 			// Object
 		 	$this->bddObj = new bdd_connexion();
 		 	$this->login = new Identification();
+		 	$this->captcha = new Captcha();
 		 	$this->connexion = $this->bddObj->Start();
 
 		 	if(!empty($_POST['pseudo'])) {
@@ -22,6 +25,9 @@
 		 	}
 		 	if(!empty($_POST['password'])) {
 		 		$this->password = $_POST['password'];
+		 	}
+		 	if (!empty($_POST['vercode'])) {
+		 		$this->code = $_POST['vercode'];
 		 	}
 	    }
 
@@ -43,8 +49,14 @@
 	    }
 
 	    function logInConnexion() {
+
+	    	// Check captcha
+	    	if(!empty($this->code)) {
+	    		$captchaCheck = $this->captcha->CapthcaValidator($this->code);
+	    	}
+
 	    	// The user accesses the page from the form
-	    	if(!empty($_POST['submit_connexion']) && empty($_SESSION['pseudo_user'])) {
+	    	if(!empty($_POST['submit_connexion']) && empty($_SESSION['pseudo_user']) && $captchaCheck ) {
 
 	    		// We get the unique salt per user
 				$salt = $this->login->Salt_user($this->pseudo, $this->connexion);
@@ -73,14 +85,21 @@
 
 				// Login information is false
 				else if($verification[0] != 1) {
-					$_SESSION['error'] = "Erreur d'identification" ;
+					$_SESSION['error'] = "Erreur d'identification";
 
 					// Redirect the user to the form
 					header('location:backoffice');
 				}
 	    	} // End button checked
 
-	    	else {
+	    	// Captcha is false
+			else if(!empty($captchaCheck) && !$captchaCheck) {
+
+				$_SESSION['error'] = "Le code captcha n'est pas correct";
+				require('../src/view/back/backoffice_connexion_view.php');
+			}
+
+	    	else if(empty($_SESSION['pseudo_user'])) {
 	    		require('../src/view/back/backoffice_connexion_view.php');
 	    	}
 

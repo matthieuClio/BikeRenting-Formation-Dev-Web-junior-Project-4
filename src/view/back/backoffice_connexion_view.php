@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
-		<?php require('header/header_backoffice_view.php'); ?>
+		<?php require('header/header_backoffice_view.php');?>
 	</head>
 
 	<body class="background_body">
@@ -11,18 +11,22 @@
 				
 				<form method="post" action="backoffice" class="connexion_form">
 					<p class="connexion_p">
-						Identifiant ou adresse e-mail
+						Identifiant ou adresse e-mail :
 					</p>
 					<input type="text" name="pseudo" class="input_connexion_bo" required>
 
 					<p class="connexion_p">
-						Mot de passe
+						Mot de passe :
 					</p>
 					<input type="password" name="password" class="input_connexion_bo" required>
 
-					<p class="connexion_p">
-						Captcha (fonction à developper)
-					</p>
+					<p class="connexion_p">Code :</p>
+					<figure class="connexion_p">
+						<img src="core/capthcaPicture.php" class="captcha_resizing">
+					</figure>
+							
+					<p class="connexion_p">Entrer le code :</p>
+					<input type="text" name="vercode" required class="input_connexion_bo" onpaste="return false;" oncopy="return false;" id="code_input" maxlength="6"/>
 
 					<div class="container_checkbox">
 						<input type="checkbox" name="password" class="input_checkbox_bo">

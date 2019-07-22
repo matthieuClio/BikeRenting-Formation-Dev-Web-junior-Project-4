@@ -69,7 +69,6 @@ a:hover {
 .slider {
 	position: relative;
 	height: 100%;
-	overflow: none;
 }
 
 .filter {
@@ -308,11 +307,7 @@ a:hover {
 	margin-top: 100px;
 	width: 200px;
 	height: 837px;
-	background-color: grey;
-}
-
-.contain_menu_backoffice {
-	border: 3px solid red;
+	background-color: #23282d;
 }
 
 .tab_backoffice {
@@ -324,7 +319,7 @@ a:hover {
 	background-color: #23282d;
 	color: white;
 	cursor: pointer;
-	border: 1px solid pink;
+	border-top: 1px solid white;
 }
 
 .logo_tab_backoffice {
@@ -367,7 +362,6 @@ a:hover {
 }
 
 .contain_ticket_backoffice {
-	border: 4px solid green;
 	text-align: center;
 	overflow: hidden;
 }
@@ -387,7 +381,6 @@ a:hover {
 }
 
 .ticket_listing_backoffice {
-	border: 2px solid red;
 	text-align: center;
 	overflow: hidden;
 }
@@ -414,7 +407,6 @@ a:hover {
 
 .ticket_backoffcie_view {
 	text-align: center;
-	border: 5px solid black;
 }
 
 .ticket_backoffcie_view_title {
@@ -553,4 +545,28 @@ a:hover {
 .text_align_max_width{
 	margin: auto;
 	max-width: 1200px;
+}
+
+
+/* MOBILE VERSION */
+/* .................... */
+/* .................... */
+
+@media screen and (max-width: 768px) {
+
+	/* ACCUEIL */
+
+	/* Header */
+
+	.slider {
+		display: none;
+	}
+
+
+	/* TICKET ALL (DETAIL)*/
+	
+	.ticket_view_all_article {
+		padding-right: 15px;
+		padding-left: 15px;
+	}
 }
