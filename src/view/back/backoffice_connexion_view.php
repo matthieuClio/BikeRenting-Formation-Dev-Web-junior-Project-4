@@ -39,7 +39,9 @@
 				</form>
 
 				<div class="error_bo">
-					<h3><?php if(!empty($_SESSION['error'])){ echo $_SESSION['error'];} ?></h3>
+					<h3>
+						<?php if(!empty($_SESSION['error'])){ echo $_SESSION['error'];} ?>
+					</h3>
 				</div>
 			</section>
 		</main>

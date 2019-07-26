@@ -8,12 +8,25 @@ let popupObject = new Popup();
 popupObject.displayPopupBackoffice();
 
 
+
 // Ticket object
 // ...
 let ticketObject = new Ticket();
 
-// Display the addTicketContainer
+// Display / Undisplay the addTicketContainer
 ticketObject.addTicketContainer();
 
-// Display the ticketListingContainer
+// Display / Undisplay the ticketListingContainer
 ticketObject.ticketListingContainer();
+
+
+
+// Comment object
+// ...
+let commentObject = new Comment(); 
+
+// Display / Undisplay the reportCommentContainer
+commentObject.reportCommentContainer();
+
+// Display / Undisplay the unreportCommentContainer
+commentObject.unreportCommentContainer();

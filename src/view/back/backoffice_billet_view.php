@@ -53,9 +53,7 @@
 			</article>
 		</main>
 
-		<script src="public/js/class/Ticket.js"></script>
-		<script src="public/js/class/popup.js"></script>
-		<script src="public/js/mainBackoffice.js"></script>
+		<?php require('js/js_load_backoffice_view.php');?>
 	</body>
 
 	<footer>

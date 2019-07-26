@@ -13,27 +13,38 @@ class Ticket {
 	}
 
 	addTicketContainer() {
-		this.addTicketButton.addEventListener("click", () =>{
 
-			if(this.addTicket.style.height == "0px") {
-				this.addTicket.style.height = "auto";
-			}
-			else if(this.addTicket.style.height != "0px") {
-				this.addTicket.style.height = "0px";
-			}
-   		});
+		// Check if addTicketButton exist
+		if(this.addTicketButton) {
+
+			this.addTicketButton.addEventListener("click", () =>{
+				if(this.addTicket.style.height == "0px") {
+					this.addTicket.style.height = "auto";
+				}
+				else if(this.addTicket.style.height != "0px") {
+					this.addTicket.style.height = "0px";
+				}
+	   		});
+		}
+
+		
 		
 	} // End addTicketContainer
 
 	ticketListingContainer() {
-		this.listingTicketButton.addEventListener("click", () =>{
 
-			if(this.listingTicket.style.height == "0px") {
-				this.listingTicket.style.height = "auto";
-			}
-			else if(this.listingTicket.style.height != "0px") {
-				this.listingTicket.style.height = "0px";
-			}
-       	});
+		// Check if listingTicketButton exist
+		if(this.listingTicketButton) {
+			this.listingTicketButton.addEventListener("click", () =>{
+				if(this.listingTicket.style.height == "0px") {
+					this.listingTicket.style.height = "auto";
+				}
+				else if(this.listingTicket.style.height != "0px") {
+					this.listingTicket.style.height = "0px";
+				}
+	       	});
+		}
+
+		
 	} // End ticketListingContainer
 }

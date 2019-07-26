@@ -22,9 +22,18 @@
 			</section>
 
 			<article class="ticket_view_all_article">
-				<h1> Titre du chapitre : <span class="title_color_backoffice"><?php if(!empty($requeteTicket['nom'])){echo $requeteTicket['nom'];} ?></span> </h1>
+				<h1> Titre du chapitre : 
+					<span class="title_color_backoffice">
+						<?php if(!empty($requeteTicket['nom'])){echo $requeteTicket['nom'];}?>
+					</span>
+				</h1>
+
 				<section class="text_align_max_width">
-					<h2> Date : <span class="title_color_backoffice"><?php if(!empty($requeteTicket['date_time'])){echo $requeteTicket['date_time'];}?></span></h2>
+					<h2> Date : 
+						<span class="title_color_backoffice">
+							<?php if(!empty($requeteTicket['date_time'])){echo $requeteTicket['date_time'];}?>
+						</span>
+					</h2>
 
 					<p class="ticket_view_all_text"><?php if(!empty($requeteTicket['texte'])){echo $requeteTicket['texte'];}?></p>
 				</section>
@@ -37,7 +46,7 @@
 					while($dataComment = $requeteComment->fetch()) { ?>
 
 						<section class="commentary_section_view_all text_align_max_width">
-							<h3>Pseudo : <?php  echo $dataComment['pseudo'].' '.$dataComment['id']; ?></h3>
+							<h3>Pseudo : <?php  echo $dataComment['pseudo'];?></h3>
 							<form method="post" action="chapitre">
 								<input type="submit" name="report_button" class="button_style_blue" value="Signaler ce commentaire">
 
@@ -56,7 +65,9 @@
 						<h3>Laisser un commentaire</h3>
 
 						<!-- Display message -->
-						<span class="error_messages"><?php if(!empty($captchaMessage)){echo $captchaMessage;}?> </span>
+						<span class="error_messages">
+							<?php if(!empty($captchaMessage)){echo $captchaMessage;}?>
+						</span>
 						
 						<form method="post" action="chapitre">
 							Pseudo : <input type="text" name="pseudo" class="input_text" placeholder="Pseudo" required>

@@ -19,11 +19,11 @@
 			</section>
 
 			<section>
-				<h2 class="category_backoffice">Commentaire signalé :</h2>
+				<h2 class="category_backoffice" id="reported_comment_id">Commentaire signalé :</h2>
 
 				<?php 
 				while($reportedComment = $requeteRep->fetch()) { ?>
-					<div class="reported_comment">
+					<div class="reported_comment" id="reported_comment_contain_id">
 						<p>
 							Pseudo : 
 							<span class="title_color_backoffice">
@@ -49,11 +49,11 @@
 			</section>
 
 			<section>
-				<h2 class="category_backoffice">Commentaire non signalé :</h2>
+				<h2 class="category_backoffice" id="unreported_comment_id">Commentaire non signalé :</h2>
 
 				<?php 
 				while($unreportedComment = $requeteUnrep->fetch()) { ?>
-					<div class="reported_comment">
+					<div class="reported_comment" id="unreported_comment_contain_id">
 						<p>
 							Pseudo : 
 							<span class="title_color_backoffice">
@@ -76,5 +76,7 @@
 				} ?>
 			</section>
 		</main>
+
+		<?php require('js/js_load_backoffice_view.php');?>
 	</body>
 </html>

@@ -93,12 +93,11 @@
 	    	} // End button checked
 
 	    	// Captcha is false
-			else if(!empty($captchaCheck) && !$captchaCheck) {
+			else if(isset($captchaCheck)) {
 
 				$_SESSION['error'] = "Le code captcha n'est pas correct";
 				require('../src/view/back/backoffice_connexion_view.php');
 			}
-
 	    	else if(empty($_SESSION['pseudo_user'])) {
 	    		require('../src/view/back/backoffice_connexion_view.php');
 	    	}
