@@ -4,13 +4,13 @@
 
 	class BackofficeBilletFull {
 
-		public $bddObj;
-		public $ticketObj;
-		public $connexion;
+		private $bddObj;
+		private $ticketObj;
+		private $connexion;
 
-		public $nameTicketPost;
-		public $textTicketPost;
-		public $idTicket;
+		private $nameTicketPost;
+		private $textTicketPost;
+		private $idTicket;
 
 		// Constructor
 		function __construct() {

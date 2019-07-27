@@ -1,8 +1,32 @@
 <?php
+	/* ROUTER WILL BE A OBJECT
+	class Backoffice {
+
+		private $url;
+		private $urlTicket;
+		private $urlChapter;
+		private $urlBackoffice;
+		private $urlTicketsFr;
+
+		// Constructor
+		function __construct() {
+
+		 	$this->url = '';
+		 	$this->url = 'ticket';
+		 	$this->urlChapter = 'chapitre';
+		 	$this->urlBackoffice = 'backoffice';
+
+		 	if(!empty($_SESSION['pseudo_user'])) {
+				$this->url = $_SESSION['pseudo_user'];
+		 	}
+	    }
+	} // End class Backoffice
+
+	*/
 
 	$url = '';
 
-	if (isset($_GET['url']) ) 
+	if (isset($_GET['url']) )
 	{
 		$url = explode('/', $_GET['url']);
 	}

@@ -4,9 +4,9 @@
 
 	class DisplayTicket {
 
-		public $bddObj;
-		public $ticketObj;
-		public $connexion;
+		private $bddObj;
+		private $ticketObj;
+		private $connexion;
 
 		// Constructor
 		function __construct() {

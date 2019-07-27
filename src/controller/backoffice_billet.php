@@ -4,12 +4,12 @@
 
 	class BackofficeBillet {
 
-		public $bddObj;
-		public $ticketObj;
-		public $connexion;
+		private $bddObj;
+		private $ticketObj;
+		private $connexion;
 
-		public $nameTicketPost;
-		public $textTicketPost;
+		private $nameTicketPost;
+		private $textTicketPost;
 
 		// Constructor
 		function __construct() {
