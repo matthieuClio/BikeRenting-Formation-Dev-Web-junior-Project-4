@@ -8,5 +8,9 @@
 		<li class="menu">
 			<a href="ticket">Ticket</a>
 		</li>
+
+		<li class="menu">
+			<a href="contact">Contact</a>
+		</li>
 	</ul>
 </nav>

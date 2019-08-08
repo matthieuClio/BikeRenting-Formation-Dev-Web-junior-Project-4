@@ -15,9 +15,10 @@
 		public function insertTicket($nom, $texte, $connexion)
 		{
 			$date_time = date("Y-m-d H:i:s");
+			$pseudo = $_SESSION['pseudo_user'];
 
-			$requete = $connexion->prepare('INSERT INTO billet(nom, texte, date_time) VALUES(?, ?, ?)');
-			$requete->execute(array($nom, $texte, $date_time));
+			$requete = $connexion->prepare('INSERT INTO billet(nom, nom_redacteur, texte, date_time) VALUES(?, ?, ?, ?)');
+			$requete->execute(array($nom, $pseudo, $texte, $date_time));
 		}
 
 		// Display name of a ticket

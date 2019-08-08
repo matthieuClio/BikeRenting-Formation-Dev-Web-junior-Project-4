@@ -36,6 +36,11 @@
 		require('../src/controller/accueil.php');
 	}
 
+	else if ($url[0] == 'contact') 
+	{
+		require('../src/controller/contact.php');
+	}
+
 	else if ($url[0] == 'ticket') 
 	{
 		require('../src/controller/displayTicket.php');
@@ -74,6 +79,6 @@
 
 	else 
 	{
-		echo 'Erreur 404';
+		require('../src/controller/error_page.php');
 	}
 ?>
