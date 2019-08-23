@@ -1,5 +1,5 @@
 <?php
-	class Identification 
+	class Identification
 	{
 		public function Salt_user($pseudo, $connexion)
 		{
@@ -10,10 +10,19 @@
 			return $salt['salt'];
 		}
 
+		public function Email_exist($email, $connexion)
+		{
+			// Select Email of account
+			$requete = $connexion->prepare('SELECT email FROM compte WHERE email = :email');
+			$requete->execute(array('email' => $email));
+			$email = $requete->fetch();
+
+			return $email['email'];
+		}
 
 		public function User_information($identifiant, $password_crypte, $connexion)
 		{
-			// Selection of the corresponding pseudo and password
+			// Selection of corresponding pseudo and password
 			$identification = $connexion->prepare('SELECT COUNT(*) FROM compte WHERE pseudo = :identifiant AND password = :password_crypte');
 
 			// Execute the request
@@ -40,11 +49,18 @@
 		public function Ip_address_storage($identifiant, $connexion)
 		{
 			// Ip address of the client
-			$adresse_ip_client = $_SERVER['REMOTE_ADDR'];
+			$adresseIpClient = $_SERVER['REMOTE_ADDR'];
 
 			// Request
 			$insert = $connexion->prepare('UPDATE compte SET adresse_ip = ? WHERE pseudo = ? ');
-			$insert->execute(array($adresse_ip_client, $identifiant));
+			$insert->execute(array($adresseIpClient, $identifiant));
+		}
+
+		public function Change_password($newPassword, $salt, $email, $connexion)
+		{
+			// Request
+			$insert = $connexion->prepare('UPDATE compte SET password = ?, salt = ? WHERE email = ? ');
+			$insert->execute(array($newPassword, $salt, $email));
 		}
 
 

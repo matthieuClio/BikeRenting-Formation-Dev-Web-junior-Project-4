@@ -18,13 +18,17 @@
 
 		<main>
 			<section>
-				<h1 class="banner">ERREUR 404</h1>
+				<h1 class="banner">Page non trouvé</h1>
 			</section>
 
 			<article class="article_view">
-				<h2 class="title_article_view">Désolé</h2>
+				<h2 class="title_article_view">Vérifiez l'url du site</h2>
 				<p class="text_article_view">
-					La page demandé ne semble pas existé.
+					<img src="public/images/photo/page_error.jpeg" alt="page erreur" style="width: 60%; height: 60%; margin-bottom: 25px;">
+					<br>
+					<a href="" class="return_error" style="color:white; background-color: black; padding: 10px;">
+						Retour à la page d'accueil
+					</a>
 				</p>
 			</article>
 		</main>

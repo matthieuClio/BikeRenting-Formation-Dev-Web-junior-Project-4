@@ -11,7 +11,7 @@
 				
 				<form method="post" action="backoffice" class="connexion_form">
 					<p class="connexion_p">
-						Identifiant ou adresse e-mail :
+						Identifiant :
 					</p>
 					<input type="text" name="pseudo" class="input_connexion_bo" required>
 
@@ -36,6 +36,8 @@
 						</p>
 						<input type="submit" name="submit_connexion" value="Se connecter" class="input_submit_bo button_style_blue">
 					</div>
+
+					<a href="reinitialiser-mot-de-passe" class="restart_password">Mot de passe oublié ?</a>
 				</form>
 
 				<div class="error_bo">

@@ -1,7 +1,6 @@
 <?php
 	class Contact {
 
-		private $textarea;
 		private $formSend;
 		private $subject;
 		private $email;
@@ -9,8 +8,6 @@
 
 		// Constructor
 		function __construct() {
-
-			$this->textarea = true;
 
 			if(!empty($_POST['form_send'])) {
 				$this->formSend = $_POST['form_send'];
@@ -30,17 +27,21 @@
 	    }
 
 	    function contactFunction() {
-	    	// Activation JS textarea
-			$textarea = $this->textarea;
-
 	    	// Load the view
 			require('../src/view/front/contact_view.php');
 	    }
 
-	    function sendEmail() {
+	     function sendEmail() {
 	    	// Send email
-	    	if(!empty($this->formSend) && !empty($this->email) && !empty($this->textareaForm)) {
-	    		mail('makabay@hotmail.fr', $this->subject, $this->textareaForm, $this->email);
+	    	if(!empty($this->formSend) && !empty($this->subject) && !empty($this->email) && !empty($this->textareaForm)) {
+
+	    		$to = 'matthieu.clio@gmail.com';
+		    	$subject = $this->subject;
+		    	$textEmail = $this->textareaForm;
+		    	$from = $this->email;
+
+		    	//mail($to, $subject, $textEmail, $from);
+		    	$_SESSION['contact_email'] = 'Votre demande a bien été prit en compte';
 	    	}
 	    }
 
@@ -48,6 +49,6 @@
 
 	// Object BackofficeBillet
 	$objectContact = new Contact();
-	$objectContact->contactFunction();
 	$objectContact->sendEmail();
+	$objectContact->contactFunction();
 ?>

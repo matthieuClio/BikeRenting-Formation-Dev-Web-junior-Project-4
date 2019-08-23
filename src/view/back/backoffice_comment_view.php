@@ -14,10 +14,6 @@
 		<?php require('menu/menu_backoffice_view.php'); ?>
 
 		<main class="contain_backoffice">
-			<section id="information_popup_backoffice">
-				<h2>Information popup</h2>
-			</section>
-
 			<section>
 				<h2 class="category_backoffice" id="reported_comment_id">Commentaire signalé :</h2>
 

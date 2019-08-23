@@ -1,7 +1,7 @@
 <!-- Menu Desktop - tablet -->
 <nav class="menu_backoffice">
 	<ul class="contain_menu_backoffice">
-
+		
 		<li class="tab_backoffice">
 			<img src="public/images/icone/home.png" alt="Icone Accueil" class="logo_tab_backoffice">
 			<a href="backoffice" class="text_tab_backoffice">Accueil</a>
@@ -15,6 +15,11 @@
 		<li class="tab_backoffice">
 			<img src="public/images/icone/comment.png" alt="Icone Commentaire" class="logo_tab_backoffice">
 			<a href="backoffice/commentaire" class="text_tab_backoffice">Commentaire</a>
+		</li>
+
+		<li class="tab_backoffice">
+			<img src="public/images/icone/compte.png" alt="Icone Commentaire" class="logo_tab_backoffice">
+			<a href="backoffice/compte" class="text_tab_backoffice">Compte</a>
 		</li>
 
 		<li class="tab_backoffice">
@@ -43,6 +48,12 @@
 		<li>
 			<a href="backoffice/commentaire" class="text_tab_backoffice">
 				<img src="public/images/icone/comment.png" alt="Icone Commentaire" class="logo_tab_backoffice">
+			</a>
+		</li>
+
+		<li>
+			<a href="backoffice/commentaire" class="text_tab_backoffice">
+				<img src="public/images/icone/compte.png" alt="Icone Commentaire" class="logo_tab_backoffice">
 			</a>
 		</li>
 

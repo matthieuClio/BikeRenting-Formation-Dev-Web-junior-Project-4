@@ -12,13 +12,22 @@
 		}
 
 		// Insert a ticket
-		public function insertTicket($nom, $texte, $connexion)
+		public function insertTicket($nom, $userId, $texte, $connexion)
 		{
-			$date_time = date("Y-m-d H:i:s");
-			$pseudo = $_SESSION['pseudo_user'];
+			$dateTime = date("Y-m-d H:i:s");
 
 			$requete = $connexion->prepare('INSERT INTO billet(nom, nom_redacteur, texte, date_time) VALUES(?, ?, ?, ?)');
-			$requete->execute(array($nom, $pseudo, $texte, $date_time));
+			$requete->execute(array($nom, $userId, $texte, $dateTime));
+		}
+
+		// Check user id
+		public function checkUserId($pseudo, $connexion)
+		{
+			$requete = $connexion->prepare('SELECT id FROM compte WHERE pseudo = :pseudo');
+			$requete->execute(array('pseudo' => $pseudo));
+			$idUser = $requete->fetch();
+
+			return $idUser['id'];
 		}
 
 		// Display name of a ticket

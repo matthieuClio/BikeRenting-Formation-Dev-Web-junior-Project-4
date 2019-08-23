@@ -1,5 +1,6 @@
 <?php
-	/* ROUTER WILL BE A OBJECT
+	/* 
+	ROUTER WILL BE A OBJECT
 	class Backoffice {
 
 		private $url;
@@ -21,7 +22,6 @@
 		 	}
 	    }
 	} // End class Backoffice
-
 	*/
 
 	$url = '';
@@ -34,6 +34,11 @@
 	if ($url == '') 
 	{
 		require('../src/controller/accueil.php');
+	}
+
+	else if ($url[0] == 'reinitialiser-mot-de-passe')
+	{
+		require('../src/controller/backoffice_restart_password.php');
 	}
 
 	else if ($url[0] == 'contact') 
@@ -64,6 +69,11 @@
 	else if ($url[0] == 'backoffice' && !empty($url[1]) && $url[1] == 'commentaire' && !empty($_SESSION['pseudo_user'])) 
 	{
 		require('../src/controller/backoffice_comment.php');
+	}
+
+	else if ($url[0] == 'backoffice' && !empty($url[1]) && $url[1] == 'compte' && !empty($_SESSION['pseudo_user'])) 
+	{
+		require('../src/controller/backoffice_account.php');
 	}
 
 	else if ($url[0] == 'backoffice' && !empty($_SESSION['pseudo_user']) || $url[0] == 'backoffice' && !empty($_POST['submit_connexion']))

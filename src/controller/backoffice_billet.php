@@ -7,6 +7,7 @@
 		private $bddObj;
 		private $ticketObj;
 		private $connexion;
+		private $pseudo;
 
 		private $nameTicketPost;
 		private $textTicketPost;
@@ -17,6 +18,8 @@
 		 	$this->bddObj = new bdd_connexion();
 		 	$this->ticketObj = new Ticket();
 		 	$this->connexion = $this->bddObj->Start();
+
+		 	$this->pseudo = $_SESSION['pseudo_user'];
 
 		 	if(!empty($_POST['submit_connexion'])) {
 		 		$this->nameTicketPost = $_POST['name_ticket'];
@@ -37,14 +40,17 @@
 					// Message registration
 					$_SESSION['popup'] = 'Billet enregistré';
 
+					// Check user id
+					$userId = $this->ticketObj->checkUserId($this->pseudo, $this->connexion);
+
 					// Save the ticket on database
-					$this->ticketObj->insertTicket($this->nameTicketPost, $this->textTicketPost, $this->connexion);
+					$this->ticketObj->insertTicket($this->nameTicketPost, $userId, $this->textTicketPost, $this->connexion);
 				}
 				else if(!empty($nameTicket)) {
 					$_SESSION['popup'] = 'Nom du billet déjà pris';
 				}
 				else if(empty($this->textTicketPost)) {
-					$_SESSION['popup'] = 'Le text du billet est vide';
+					$_SESSION['popup'] = 'Le texte du billet est vide';
 				}
 			}
 		} // End function addTicket

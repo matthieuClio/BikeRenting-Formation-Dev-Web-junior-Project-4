@@ -227,7 +227,22 @@ a:hover {
 
 .contact_form input {
 	margin-bottom: 25px;
-	width: 100%;
+	width: 99%;
+}
+
+.contact_form textarea {
+	width: 99%;
+}
+
+.contact_form p {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin-bottom: 25px;
+	width: 99%;
+	color: white;
+	background-color: green;
+	text-align: center;
+	border-radius: 5px;
 }
 
 
@@ -278,6 +293,7 @@ a:hover {
 
 .container_checkbox {
 	margin-top: 20px;
+	margin-bottom: 20px;
 	margin-left: 24px;
 	width: 85%;
 }
@@ -293,14 +309,30 @@ a:hover {
 	color: #72777c;
 }
 
-.input_submit_bo {
-	margin-left: 19px;
+.restart_password {
+	margin-left: 24px;
+	color: #00b9eb;
 }
 
 .error_bo {
 	margin-top: 10px;
 	text-align: center;
 	color: #d50a0a;
+}
+
+
+/* LOG BACKOFFICE RESTART */
+
+.validation_restart_backoffice {
+	margin: auto;
+	margin-bottom: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	width: 85%;
+	background-color: green;
+	text-align: center;
+	color: white;
+	border-radius: 5px;
 }
 
 
@@ -462,6 +494,27 @@ a:hover {
 }
 
 
+/* BACKOFFICE COMMENT */
+
+.account_information {
+	border: 2px solid red;
+}
+
+.account_information h2 {
+	margin-bottom: 25px;
+}
+
+.account_information input {
+	display: block;
+	margin-bottom: 15px;
+	padding: 5px;
+}
+
+.account_information p {
+	font-size: 0.8em;
+	font-style: italic;
+}
+
 /* Module (small content) */
 /* ...................... */
 /* ...................... */
@@ -477,6 +530,10 @@ a:hover {
 .button_style_blue:hover {
 	background-color: #1a1e22;
 	color: #00b9eb;
+}
+
+.restart_password:hover {
+	text-decoration: underline;
 }
 
 
@@ -594,6 +651,11 @@ a:hover {
 		padding-left: 15px;
 	}
 
+	/* BACKOFFICE */
+	.header_backoffice {
+		display: none;
+	}
+
 	/* BACKOFFICE MENU */
 	.menu_backoffice {
 		display: none;
@@ -601,7 +663,6 @@ a:hover {
 
 	.contain_backoffice {
 		margin-left: 0;
-		padding-top: 200px;
 		padding-right: 10px;
 	}
 
@@ -609,7 +670,6 @@ a:hover {
 		z-index: 3;
 		position: fixed;
 		width: 100%;
-		padding-top: 100px;
 		display: block;
 		text-align: center;
 	}
