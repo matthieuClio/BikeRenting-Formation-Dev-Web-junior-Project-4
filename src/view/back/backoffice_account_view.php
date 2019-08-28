@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
-		<?php require('header/header_backoffice_view.php'); ?>
+		<?php include 'header/header_backoffice_view.php'; ?>
 	</head>
 
 	<body class="background_body">
@@ -11,7 +11,7 @@
 			</figure>
 		</header>
 
-		<?php require('menu/menu_backoffice_view.php'); ?>
+		<?php include 'menu/menu_backoffice_view.php'; ?>
 
 		<main class="contain_backoffice">
 			<?php 
@@ -29,12 +29,16 @@
 				}
 			?>
 			<section class="account_information">
-				<h2 class="category_backoffice">Informations</h2>
+				<h2 class="category_backoffice" id="information_compte_title">
+					Informations du compte
+				</h2>
 
-				<form method="post" action="backoffice/compte">
-					Pseudo : <input type="text" name="pseudo_account" value="<?php echo $informationAccount[0]; ?>" required>
+				<form method="post" action="backoffice/compte" id="information_compte_container">
+					Pseudo : 
+					<input type="text" name="pseudo_account" value="<?php echo $informationAccount[0]; ?>" required>
 
-					Email : <input type="text" name="email_account" value="<?php echo $informationAccount[1]; ?>" required>
+					Email : 
+					<input type="text" name="email_account" value="<?php echo $informationAccount[1]; ?>" required>
 
 					Password :
 					<p>
@@ -45,8 +49,58 @@
 					<input type="submit" name="edit_backoffice" class="button_style_blue" value="Modifier">
 				</form>
 			</section>
+
+			<h2 class="category_backoffice" id="manager_account_button">
+				Compte manager
+			</h2>
+
+			<article id="manager_account_container" class="manager_account">
+				<input type="button" class="button_style_blue modification_account_button" id="creat_compte_button" value="Créer un compte">
+
+				<form method="post" action="backoffice/compte" class="creat_account" id="creat_compte_container">
+					Pseudo :
+					<input type="text" name="pseudo_account_new" required>
+
+					Email :
+					<input type="text" name="email_account_new" required>
+
+					Password :
+					<input type="password" name="password_account_new" placeholder="Mot de passe" required>
+
+					<input type="submit" name="creat_backoffice" class="button_style_blue creat_account_button" value="Créer">
+				</form>
+
+				<section class="user_account">
+					<h3>Comptes utilisateurs</h3>
+
+					<?php
+					while ($usersInformations = $request->fetch()) {
+						?>
+						<form method="post" action="backoffice/compte/manage">
+							<p>
+								Pseudo : 
+								<span class="title_color_backoffice">
+									<?php echo $usersInformations['pseudo']; ?>
+								</span>
+								Email :
+								<span class="title_color_backoffice">
+									<?php echo $usersInformations['email']; ?>
+								</span>
+							</p>
+							
+							<input type="submit" name="modification_account_user" class="edit_backoffice" value="Modifier">
+
+							<input type="submit" name="delete_account_user" class="delete_backoffice" value="Supprimer">
+
+							<input type="hidden" name="id_account" value="<?php echo $usersInformations['id'];?>">
+						</form>
+						<?php
+					}
+					?>
+				</section>
+			</article>
 		</main>
 
-		<?php require('js/js_load_backoffice_view.php');?>
+		<?php include 'js/js_load_backoffice_view.php';?>	
 	</body>
 </html>

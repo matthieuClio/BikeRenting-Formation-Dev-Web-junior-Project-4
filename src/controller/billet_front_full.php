@@ -68,8 +68,8 @@
 					$this->commentObj->insertCommentMod($this->id, $this->pseudo, $this->text, $this->connexion);
 				}
 				else {
-					$Message = "Code captcha invalide";
-					return $Message;
+					$message = "Code captcha invalide";
+					return $message;
 				}
 			}
 		} // End function insertComment
@@ -95,7 +95,7 @@
 		// Report comment
 		$objectTicket->reportComment();
 
-		// Get message if the capthca is wrong or success
+		// Insert comment and get a message if the capthca is wrong
 		$captchaMessage = $objectTicket->insertComment();
 
 		// Display comment
@@ -103,6 +103,9 @@
 
 		// Load the view
 		require('../src/view/front/ticket_view_all.php');
+		
+		// Create a local storage -localStorage.comment-
+		?><script src="public/js/class/CommentStorageUser.js"></script><?php
 	}
 	else {
 		// Location

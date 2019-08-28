@@ -1,6 +1,6 @@
 <?php
 	class Ticket {
-
+		
 		// Check the name of ticket
 		public function checkNameTicket($nom, $connexion)
 		{
@@ -93,6 +93,15 @@
 			$infoTicket = $requete->fetch();
 
 			return $infoTicket;
+		}
+
+		// Display name of a ticket
+		public function displayEditortTicket($connexion)
+		{
+			$requete = $connexion->prepare('SELECT pseudo FROM `compte` join billet on billet.nom_redacteur = compte.id');
+			$requete->execute();
+
+			return $requete;
 		}
 
 	} // End class Ticket

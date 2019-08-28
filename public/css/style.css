@@ -116,7 +116,8 @@ a:hover {
 .ticket_view {
 	display: inline-block;
 	margin-top: 50px;
-	width: 200px;
+	margin-bottom: 25px;
+	width: 250px;
 	background-color: white;
 	border-radius: 5px;
 	box-shadow: 0px 4px 5px #d4d4d4;
@@ -145,13 +146,14 @@ a:hover {
 }
 
 .ticket_view_button {
+	margin-top: 5px; 
 	padding: 10px;
 	width: 100%;
 	font-size: 2em;
 }
 
 
-/* TICKET ALL (DETAIL)*/
+/* TICKET ALL (DETAIL) */
 
 .ticket_view_all_article {
 	text-align: center;
@@ -494,10 +496,10 @@ a:hover {
 }
 
 
-/* BACKOFFICE COMMENT */
+/* BACKOFFICE ACCOUNT */
 
 .account_information {
-	border: 2px solid red;
+	overflow: hidden;
 }
 
 .account_information h2 {
@@ -513,6 +515,50 @@ a:hover {
 .account_information p {
 	font-size: 0.8em;
 	font-style: italic;
+}
+
+.modification_account_button {
+	display: block;
+	margin-top: 25px;
+}
+
+.manager_account {
+	overflow: hidden;
+}
+
+.creat_account {
+	height: 0px;
+	overflow: hidden;
+}
+
+.creat_account input{
+	display: block;
+}
+
+.creat_account_button {
+	margin-top: 15px;
+}
+
+.user_account {
+	margin-top: 25px;
+}
+
+.user_account form {
+	padding-top: 25px;
+	padding-bottom: 25px;
+	margin-bottom: 20px;
+	width: 100%;
+	background-color: #23282d;
+	color: white;
+	text-align: center;
+}
+
+.user_account input {
+	margin-top: 15px;
+}
+
+.user_account span {
+	margin-right: 10px;
 }
 
 /* Module (small content) */

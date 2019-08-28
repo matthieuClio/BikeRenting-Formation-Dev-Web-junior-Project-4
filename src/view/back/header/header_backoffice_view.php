@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="public/css/style.css">
 <?php 
 	$desable = true;
-	if (!empty($_SESSION['pseudo_user']) && $desable != true) {
+	if (!empty($_SESSION['pseudo_user']) && !$desable) {
 		?>
 			<script src="https://cloud.tinymce.com/5/tinymce.min.js"></script>
 			<script>tinymce.init({selector:'textarea'});</script>

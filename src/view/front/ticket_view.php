@@ -24,6 +24,9 @@
 			<div class="article_ticket_view">
 				<?php
 				while($allTickets = $requete->fetch()) {
+					
+					// Name of editor
+					$editorName = $requeteEditorName->fetch();
 					?>
 					<div class="ticket_view">
 						<figure>
@@ -34,6 +37,18 @@
 							<form method="post" action="chapitre">
 								<h2><?php echo $allTickets['nom']; ?></h2>
 								<p><?php  echo $allTickets['date_time'];?></p>
+								<p><?php echo '['.$editorName['pseudo'].']'; ?></p>
+								<?php
+									$nbChaine = strlen($allTickets['texte']);
+
+									// Add a balise P if the number of caractere > 30
+									if($nbChaine > 30) {
+										echo substr($allTickets['texte'], 0, 30).'</p>'.'...';
+									}
+									else {
+										echo substr($allTickets['texte'], 0, 30).'...';
+									}
+								?>
 
 								<input type="hidden" name="id" value="<?php echo $allTickets['id'];?>">
 								<input type="submit" name="valider" class="ticket_view_button button_style_blue" value="Voir">

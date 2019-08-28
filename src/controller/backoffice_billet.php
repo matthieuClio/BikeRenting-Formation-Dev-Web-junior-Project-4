@@ -64,11 +64,11 @@
 
 	} // End class BackofficeBillet
 
-
 	// Object BackofficeBillet
 	$objectBackofficeBillet = new BackofficeBillet();
 	$objectBackofficeBillet->addTicket();
 	$request = $objectBackofficeBillet->displayTicketView();
+
 	// Load the view
 	require('../src/view/back/backoffice_billet_view.php');
 ?>

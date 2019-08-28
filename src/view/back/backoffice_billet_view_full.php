@@ -29,7 +29,7 @@
 						Date du billet : 
 						<span class="title_color_backoffice">
 							<?php echo $request[1]; ?>
-							<span class="title_color_backoffice">
+						</span>
 					</h2>
 				</section>
 

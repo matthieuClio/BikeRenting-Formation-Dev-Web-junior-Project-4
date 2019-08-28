@@ -1,6 +1,7 @@
 "use strict";
 
 class Popup {
+	
 	constructor() {
 		this.informationPopup = document.getElementById("information_popup_backoffice");
 		this.informationPopupText = document.getElementById("information_popup_backoffice_h2");

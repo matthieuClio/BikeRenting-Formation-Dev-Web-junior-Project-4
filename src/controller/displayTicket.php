@@ -22,12 +22,19 @@
 			return $request;
 		}
 
+		function displayTicketNameEditorView() {
+			$request = $this->ticketObj->displayEditortTicket($this->connexion);
+
+			return $request;
+	    }
+
 	} // End class BackofficeBillet
 
 
 	// Object BackofficeBillet
 	$objectTicket = new DisplayTicket();
 	$requete = $objectTicket->ticketInfo();
+	$requeteEditorName = $objectTicket->displayTicketNameEditorView();
 
 	// Load the view
 	require('../src/view/front/ticket_view.php');

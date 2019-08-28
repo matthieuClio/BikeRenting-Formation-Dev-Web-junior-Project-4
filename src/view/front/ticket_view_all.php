@@ -48,7 +48,7 @@
 						<section class="commentary_section_view_all text_align_max_width">
 							<h3>Pseudo : <?php  echo $dataComment['pseudo'];?></h3>
 							<form method="post" action="chapitre">
-								<input type="submit" name="report_button" class="button_style_blue" value="Signaler ce commentaire">
+								<input type="submit" name="report_button" id="report_button" class="button_style_blue" value="Signaler ce commentaire">
 
 								<!-- Id ticket of comment -->
 								<input type="hidden" name="id_comment" value="<?php echo $dataComment['id'];?>">
@@ -88,6 +88,6 @@
 				</div>
 			</section>
 		</main>
-
+		<?php include 'js/js_load_view.php';?>	
 	</body>
 </html>

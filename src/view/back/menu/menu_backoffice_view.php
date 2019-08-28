@@ -52,7 +52,7 @@
 		</li>
 
 		<li>
-			<a href="backoffice/commentaire" class="text_tab_backoffice">
+			<a href="backoffice/compte" class="text_tab_backoffice">
 				<img src="public/images/icone/compte.png" alt="Icone Commentaire" class="logo_tab_backoffice">
 			</a>
 		</li>

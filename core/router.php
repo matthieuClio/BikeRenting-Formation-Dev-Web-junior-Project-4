@@ -1,28 +1,4 @@
 <?php
-	/* 
-	ROUTER WILL BE A OBJECT
-	class Backoffice {
-
-		private $url;
-		private $urlTicket;
-		private $urlChapter;
-		private $urlBackoffice;
-		private $urlTicketsFr;
-
-		// Constructor
-		function __construct() {
-
-		 	$this->url = '';
-		 	$this->url = 'ticket';
-		 	$this->urlChapter = 'chapitre';
-		 	$this->urlBackoffice = 'backoffice';
-
-		 	if(!empty($_SESSION['pseudo_user'])) {
-				$this->url = $_SESSION['pseudo_user'];
-		 	}
-	    }
-	} // End class Backoffice
-	*/
 
 	$url = '';
 
@@ -69,6 +45,11 @@
 	else if ($url[0] == 'backoffice' && !empty($url[1]) && $url[1] == 'commentaire' && !empty($_SESSION['pseudo_user'])) 
 	{
 		require('../src/controller/backoffice_comment.php');
+	}
+
+	else if ($url[0] == 'backoffice' && !empty($url[1]) && $url[1] == 'compte' && !empty($url[2]) && $url[2] == 'manage' && !empty($_SESSION['pseudo_user'])) 
+	{
+		require('../src/controller/backoffice_account_manage.php');
 	}
 
 	else if ($url[0] == 'backoffice' && !empty($url[1]) && $url[1] == 'compte' && !empty($_SESSION['pseudo_user'])) 

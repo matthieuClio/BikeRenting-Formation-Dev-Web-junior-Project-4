@@ -15,7 +15,9 @@
 
 		<main class="contain_backoffice">
 			<section>
-				<h2 class="category_backoffice" id="reported_comment_id">Commentaire signalé :</h2>
+				<h2 class="category_backoffice" id="reported_comment_id">
+					Commentaire signalé :
+				</h2>
 
 				<?php 
 				while($reportedComment = $requeteRep->fetch()) { ?>
