@@ -1,5 +1,5 @@
 <?php
-	require('../core/bdd_connexion.php');
+	require('../core/Bdd_connexion.php');
 	require('../src/model/Billets.php');
 
 	class BackofficeBillet {

@@ -18,17 +18,18 @@
 
 		<main>
 			<section>
-				<h1 class="banner">Page non trouvé</h1>
+				<h1 class="banner">Jean Forteroche</h1>
 			</section>
 
 			<article class="article_view">
-				<h2 class="title_article_view">Vérifiez l'url du site</h2>
+				<h2 class="title_article_view history_title">Histoire :</h2>
+
 				<p class="text_article_view">
-					<img src="public/images/photo/page_error.jpeg" alt="page erreur" class="image_error">
-					
-					<a href="" class="error_page">
-						Retour à la page d'accueil
-					</a>
+					Jean Forteroche, acteur et écrivain à écrit : "Billet simple pour l'Alaska".
+					La dernière oeuvre d'actualité de Jean a eu un grand succès dernièrement, c'est pourquoi pour la première fois, il propose la mise en ligne de "Billet simple pour l'Alaska".
+					<br>
+					<br>
+					Jean est une personne calme travaillant dans a ville de Paris, agé de 45 ans et à déjà réalisé plus de 15 oeuvres publiés par un grand éditeur.
 				</p>
 			</article>
 		</main>

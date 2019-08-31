@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
-		<?php require('header/header_view.php'); ?>
+		<?php include'header/header_view.php'; ?>
 	</head>
 
 	<body>
 		<header>
 			<!-- Menu -->
-			<?php require('menu/menu_view.php'); ?>
+			<?php include'menu/menu_view.php'; ?>
 
 			<!-- Slider -->
 			<div class="slider">
@@ -31,11 +31,21 @@
 				<section class="text_align_max_width">
 					<h2> Date : 
 						<span class="title_color_backoffice">
-							<?php if(!empty($requeteTicket['date_time'])){echo $requeteTicket['date_time'];}?>
+							<?php 
+								if(!empty($requeteTicket['date_time'])) {
+									echo $requeteTicket['date_time'];
+								}
+							?>
 						</span>
 					</h2>
 
-					<p class="ticket_view_all_text"><?php if(!empty($requeteTicket['texte'])){echo $requeteTicket['texte'];}?></p>
+					<div class="ticket_view_all_text">
+						<?php 
+							if(!empty($requeteTicket['texte'])) {
+								echo $requeteTicket['texte'];
+							}
+						?>	
+					</div>
 				</section>
 			</article>
 
@@ -48,15 +58,16 @@
 						<section class="commentary_section_view_all text_align_max_width">
 							<h3>Pseudo : <?php  echo $dataComment['pseudo'];?></h3>
 							<form method="post" action="chapitre">
-								<input type="submit" name="report_button" id="report_button" class="button_style_blue" value="Signaler ce commentaire">
 
 								<!-- Id ticket of comment -->
 								<input type="hidden" name="id_comment" value="<?php echo $dataComment['id'];?>">
 								<!-- Id ticket -->
 								<input type="hidden" name="id" value="<?php if(!empty($_POST['id'])){ echo $_POST['id']; }?>">
+
+								<p><?php echo $dataComment['texte']; ?></p>
+								
+								<input type="submit" name="report_button" id="<?php echo $dataComment['id'];?>" class="button_style_blue" value="Signaler ce commentaire">
 							</form>
-							
-							<p>Commentaire : <?php echo $dataComment['texte']; ?></p>
 						</section>
 						<?php
 					} ?>
@@ -66,7 +77,14 @@
 
 						<!-- Display message -->
 						<span class="error_messages">
-							<?php if(!empty($captchaMessage)){echo $captchaMessage;}?>
+							<?php
+								if(!empty($captchaMessage)) {
+									echo $captchaMessage;
+								}
+								else if(!empty($commentMessage)) {
+									echo $commentMessage;
+								}
+							?>
 						</span>
 						
 						<form method="post" action="chapitre">
@@ -75,11 +93,11 @@
 
 							Code :
 							<figure>
-								<img src="core/capthcaPicture.php" class="captcha_resizing">
+								<img src="core/capthcaPicture.php" class="captcha_resizing" alt="captcha">
 							</figure>
 							
 							Entrer le code :
-							<input type="text" name="vercode" class="input_text" required placeholder="Code" onpaste="return false;" oncopy="return false;" id="code_input" maxlength="6"/>
+							<input type="text" name="vercode" class="input_text" required placeholder="Code" id="code_input" maxlength="6"/>
 							
 							<input type="submit" name="validator_button" class="button_style_blue" value="Soumettre">
 							<input type="hidden" name="id" value="<?php if(!empty($_POST['id'])){ echo $_POST['id']; }?>">
@@ -90,4 +108,7 @@
 		</main>
 		<?php include 'js/js_load_view.php';?>	
 	</body>
+
+	<!-- Footer -->
+	<?php include'footer/footer_view.php'; ?>
 </html>

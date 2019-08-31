@@ -55,18 +55,4 @@ class Comment {
 	       	});
 		}
 	} // End unreportCommentContainer
-
-	blockCommentaryUser() {
-		// Check if validatorButton exist
-		if(this.reportedButton) {
-			this.reportedButton.addEventListener("click", () =>{
-				//storage.clear();
-				if(localStorage.comment) {
-					event.preventDefault();
-					alert('Vous avez écrit ce commentaire');
-				}
-			});
-		}
-	} // End blockCommentaryUser
-
 }

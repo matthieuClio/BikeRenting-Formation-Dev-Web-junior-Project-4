@@ -1,5 +1,5 @@
 <?php
-
+	
 	$url = '';
 
 	if (isset($_GET['url']) )
@@ -30,6 +30,11 @@
 	else if ($url[0] == 'chapitre') 
 	{
 		require('../src/controller/billet_front_full.php');
+	}
+
+	else if ($url[0] == 'auteur')
+	{
+		require('../src/controller/author.php');
 	}
 
 	else if ($url[0] == 'backoffice' && !empty($url[1]) && $url[1] == 'billets' && !empty($url[2]) && $url[2] == 'manage' && !empty($_SESSION['pseudo_user'])) 

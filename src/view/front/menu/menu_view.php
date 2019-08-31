@@ -12,5 +12,9 @@
 		<li class="menu">
 			<a href="contact">Contact</a>
 		</li>
+
+		<li class="menu">
+			<a href="auteur">Mr Forteroche</a>
+		</li>
 	</ul>
 </nav>

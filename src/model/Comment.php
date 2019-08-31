@@ -56,7 +56,25 @@
 			$requete->execute(array($id_comment));
 		}
 
+		// Pseudo comment id
+		public function pseudoCommentIdMod($id, $connexion)
+		{
+			$requete = $connexion->prepare('SELECT pseudo FROM commentaire WHERE id = ?');
+			$requete->execute(array($id));
+			$pseudo = $requete->fetch();
 
+			return $pseudo['pseudo'];
+		}
+
+		// Pseudo comment
+		public function pseudoCommentMod($pseudo, $connexion)
+		{
+			$requete = $connexion->prepare('SELECT pseudo FROM commentaire WHERE pseudo = ?');
+			$requete->execute(array($pseudo));
+			$pseudo = $requete->fetch();
+
+			return $pseudo['pseudo'];
+		}
 
 	} // End class Comment
 ?>

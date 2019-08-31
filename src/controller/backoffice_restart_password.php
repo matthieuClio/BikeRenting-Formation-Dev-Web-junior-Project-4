@@ -62,7 +62,7 @@
 			    	$textEmail = 'Votre nouveau mot de passe : '.$password;
 			    	$from = 'Site Jean FORTEROCHE';
 
-		    		//mail($to, $subject, $textEmail, $from);
+		    		mail($to, $subject, $textEmail, $from);
 
 		    		// Message to display after the reset of password
 		    		$_SESSION['validation_restart'] = 'Réinitialisation effectuée';

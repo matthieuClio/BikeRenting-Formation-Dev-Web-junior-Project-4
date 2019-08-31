@@ -1,5 +1,5 @@
 <?php
-	require('../core/bdd_connexion.php');
+	require('../core/Bdd_connexion.php');
 	require('../core/Captcha.php');
 	require('../src/model/Billets.php');
 	require('../src/model/Comment.php');
@@ -61,11 +61,27 @@
 			if(!empty($_SESSION['vercode']) && !empty($_POST['validator_button'])) {
 
 				// Check captcha
-				$captchaCheck = $this->captcha->CapthcaValidator($this->code);
+				$captchaCheck = 
+					$this->captcha->CapthcaValidator($this->code);
 
+				// Check Pseudo
+				$pseudoCheck = 
+					$this->commentObj->pseudoCommentMod($this->pseudo, $this->connexion);
+
+				// Check if the captcha is valide
 				if($captchaCheck) {
-					// Insert comment
-					$this->commentObj->insertCommentMod($this->id, $this->pseudo, $this->text, $this->connexion);
+					if(!isset($pseudoCheck)) {
+						// Insert comment
+						$this->commentObj->insertCommentMod($this->id, $this->pseudo, $this->text, $this->connexion);
+
+						// Get pseudo comment
+						$_SESSION['comment'] =
+							$this->pseudo;
+					}
+					else {
+						$message = "Pseudo déjà existant";
+						return $message;
+					}
 				}
 				else {
 					$message = "Code captcha invalide";
@@ -76,9 +92,26 @@
 
 		function reportComment() {
 			if(!empty($_POST['report_button'])) {
-				$this->commentObj->reportCommentMod($this->idComment, $this->connexion);
-			}
 
+				if(!empty($_SESSION['comment'])  ) {
+
+					// Get the pseudo of comment
+					$pseudo = 
+						$this->commentObj->pseudoCommentIdMod($this->idComment, $this->connexion);
+					// Check pseudo and $_session isn't equal
+					if($pseudo != $_SESSION['comment']) {
+						$this->commentObj->reportCommentMod($this->idComment, $this->connexion);
+					}
+					else if($pseudo == $_SESSION['comment']) {
+
+						$errorMessage = 'Vous ne pouvez pas reporter votre propre message';
+						return $errorMessage;
+					}
+				}
+				else {
+					$this->commentObj->reportCommentMod($this->idComment, $this->connexion);
+				}
+			}
 		} // End function reportComment
 	} // End class BackofficeBillet
 
@@ -93,7 +126,7 @@
 		$requeteTicket = $objectTicket->ticketInfo();
 
 		// Report comment
-		$objectTicket->reportComment();
+		$commentMessage = $objectTicket->reportComment();
 
 		// Insert comment and get a message if the capthca is wrong
 		$captchaMessage = $objectTicket->insertComment();
@@ -103,9 +136,6 @@
 
 		// Load the view
 		require('../src/view/front/ticket_view_all.php');
-		
-		// Create a local storage -localStorage.comment-
-		?><script src="public/js/class/CommentStorageUser.js"></script><?php
 	}
 	else {
 		// Location

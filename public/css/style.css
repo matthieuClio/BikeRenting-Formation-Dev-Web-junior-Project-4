@@ -156,6 +156,7 @@ a:hover {
 /* TICKET ALL (DETAIL) */
 
 .ticket_view_all_article {
+	padding-top: 25px;
 	text-align: center;
 }
 
@@ -175,8 +176,9 @@ a:hover {
 }
 
 .commentary_section_view_all {
-	border-bottom: 1px solid gray;
 	margin-top: 25px;
+	padding-bottom: 25px;
+	border-bottom: 1px solid gray;
 }
 
 .commentary_section_view_all h3 {
@@ -184,7 +186,10 @@ a:hover {
 }
 
 .commentary_section_view_all p {
+	display: inline-block;
+	width: 80%;
 	margin-top: 25px;
+	text-align: left;
 }
 
 .commentary_form_view_all {
@@ -245,6 +250,43 @@ a:hover {
 	background-color: green;
 	text-align: center;
 	border-radius: 5px;
+}
+
+
+/* AUTHOR */
+
+.history_title {
+	margin-bottom: 10px;
+}
+
+/* FOOTER */
+
+footer {
+	margin-top: 25px;
+	padding-top: 25px;
+	padding-bottom: 25px;
+	background-color: #131418;
+	color: white;
+	text-align: center;
+	font-size: 2em;
+}
+
+
+/* 404 PAGE */
+
+.image_error {
+	width: 60%;
+	height: 60%;
+	margin-bottom: 25px;
+}
+
+.error_page {
+	display: block;
+	margin: auto;
+	width: 250px;
+	color: white;
+	background-color: black;
+	padding: 10px;
 }
 
 
@@ -678,6 +720,15 @@ a:hover {
 /* .................... */
 
 @media screen and (max-width: 768px) {
+
+	/* MENU */
+
+	.contain_menu_front li {
+		padding-top: 10px;
+		padding-bottom: 10px;
+		width: 100%;
+	}
+
 
 	/* ACCUEIL */
 	/* Header */

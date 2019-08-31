@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
-		<?php require('header/header_view.php'); ?>
+		<?php include'header/header_view.php'; ?>
 	</head>
 
 	<body>
 		<header>
 			<!-- Menu -->
-			<?php require('menu/menu_view.php'); ?>
+			<?php include'menu/menu_view.php'; ?>
 
 			<!-- Slider -->
 			<div class="slider">
@@ -62,4 +62,7 @@
 		</main>
 
 	</body>
+
+	<!-- Footer -->
+	<?php include'footer/footer_view.php'; ?>
 </html>

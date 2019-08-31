@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
 <link rel="stylesheet" href="public/css/style.css">
 <?php 
-	$desable = true;
+	$desable = false;
 	if (!empty($_SESSION['pseudo_user']) && !$desable) {
 		?>
 			<script src="https://cloud.tinymce.com/5/tinymce.min.js"></script>

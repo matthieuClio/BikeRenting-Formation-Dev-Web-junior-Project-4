@@ -40,7 +40,7 @@
 		    	$textEmail = $this->textareaForm;
 		    	$from = $this->email;
 
-		    	//mail($to, $subject, $textEmail, $from);
+		    	mail($to, $subject, $textEmail, $from);
 		    	$_SESSION['contact_email'] = 'Votre demande a bien été prit en compte';
 	    	}
 	    }
