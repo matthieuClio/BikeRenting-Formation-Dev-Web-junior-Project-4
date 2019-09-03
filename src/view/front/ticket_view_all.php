@@ -107,8 +107,9 @@
 			</section>
 		</main>
 		<?php include 'js/js_load_view.php';?>	
+
+		<!-- Footer -->
+		<?php include'footer/footer_view.php'; ?>
 	</body>
 
-	<!-- Footer -->
-	<?php include'footer/footer_view.php'; ?>
 </html>

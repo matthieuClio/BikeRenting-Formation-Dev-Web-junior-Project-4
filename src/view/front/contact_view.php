@@ -38,9 +38,10 @@
 				</form>
 			</article>
 		</main>
-
+		
+		<!-- Footer -->
+		<?php include'footer/footer_view.php'; ?>
 	</body>
 	
-	<!-- Footer -->
-	<?php include'footer/footer_view.php'; ?>
+	
 </html>
