@@ -22,8 +22,5 @@
 				<h1>Bienvenue !</h1>
 			</section>
 		</main>
-
-		<footer>
-		</footer>
 	</body>
 </html>

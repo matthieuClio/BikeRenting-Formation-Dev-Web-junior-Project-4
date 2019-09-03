@@ -31,9 +31,6 @@ commentObject.reportCommentContainer();
 // Display / Undisplay the unreportCommentContainer
 commentObject.unreportCommentContainer();
 
-// Front office, block the commentary of a user
-commentObject.blockCommentaryUser();
-
 
 
 // Account object

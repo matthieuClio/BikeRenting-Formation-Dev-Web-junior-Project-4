@@ -71,6 +71,7 @@
 				// Check if the captcha is valide
 				if($captchaCheck) {
 					if(!isset($pseudoCheck)) {
+
 						// Insert comment
 						$this->commentObj->insertCommentMod($this->id, $this->pseudo, $this->text, $this->connexion);
 

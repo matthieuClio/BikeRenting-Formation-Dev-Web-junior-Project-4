@@ -55,7 +55,4 @@
 
 		<?php require('js/js_load_backoffice_view.php');?>
 	</body>
-
-	<footer>
-	</footer>
 </html>

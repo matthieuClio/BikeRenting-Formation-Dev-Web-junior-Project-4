@@ -29,11 +29,7 @@
 					<input type="text" name="vercode" required class="input_connexion_bo" onpaste="return false;" oncopy="return false;" id="code_input" maxlength="6"/>
 
 					<div class="container_checkbox">
-						<input type="checkbox" name="password" class="input_checkbox_bo">
-
-						<p class="checkbox_p">
-							Se souvenir de moi
-						</p>
+						
 						<input type="submit" name="submit_connexion" value="Se connecter" class="input_submit_bo button_style_blue">
 					</div>
 
